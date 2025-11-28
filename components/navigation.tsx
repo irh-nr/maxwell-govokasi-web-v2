@@ -71,14 +71,13 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
                 className="pt-1"
               />
             ) : (
-              <span
-                className={cn(
-                  "font-bold text-lg inline",
-                  isScrolled ? "" : "text-white"
-                )}
-              >
-                GOVOKASi
-              </span>
+              <Image
+                src={"/brand-logo/GV-white.png"}
+                alt="GOVOKASi Logo"
+                height={100}
+                width={100}
+                className="pt-2"
+              />
             )}
           </div>
 

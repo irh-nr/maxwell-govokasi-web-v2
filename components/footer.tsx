@@ -17,7 +17,13 @@ export function Footer() {
                 className="pb-1"
               />
               <span className="text-muted-foreground mx-1">×</span>
-              <span className="font-bold">GOVOKASi</span>
+              <Image
+                src={"/brand-logo/GV-white.png"}
+                alt="GOVOKASi Logo"
+                height={100}
+                width={100}
+                className="pt-2"
+              />
             </div>
             <p className="text-white/70 text-sm max-w-56">
               Connecting young talent with top corporate opportunities
