@@ -46,7 +46,7 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
             </span>
             {isScrolled ? (
               <Image
-                src={"/maxwell-logo/maxwell.png"}
+                src={"/brand-logo/maxwell.png"}
                 alt="Maxwell Logo"
                 height={100}
                 width={100}
@@ -54,7 +54,7 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
               />
             ) : (
               <Image
-                src={"/maxwell-logo/maxwell-white.png"}
+                src={"/brand-logo/maxwell-white.png"}
                 alt="Maxwell Logo"
                 height={100}
                 width={100}
@@ -62,14 +62,24 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
               />
             )}
             <span className="text-muted-foreground mx-1">×</span>
-            <span
-              className={cn(
-                "font-bold text-lg inline",
-                isScrolled ? "" : "text-white"
-              )}
-            >
-              GOVOKASi
-            </span>
+            {isScrolled ? (
+              <Image
+                src={"/brand-logo/GV-Blue.png"}
+                alt="GOVOKASi Logo"
+                height={100}
+                width={100}
+                className="pt-1"
+              />
+            ) : (
+              <span
+                className={cn(
+                  "font-bold text-lg inline",
+                  isScrolled ? "" : "text-white"
+                )}
+              >
+                GOVOKASi
+              </span>
+            )}
           </div>
 
           {/* Desktop Menu */}
