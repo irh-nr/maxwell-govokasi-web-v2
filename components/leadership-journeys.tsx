@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -11,7 +11,8 @@ const testimonials = [
     position: "Business Analyst",
     company: "Telkom",
     logo: "TLK",
-    quote: "Maxwell Leadership helped transform my confidence and sharpen my communication as a future leader.",
+    quote:
+      "Maxwell Leadership helped transform my confidence and sharpen my communication as a future leader.",
     category: "leadership",
     image: "/professional-woman-business.jpg",
   },
@@ -20,7 +21,8 @@ const testimonials = [
     position: "HR Executive",
     company: "Bank BCA",
     logo: "BCA",
-    quote: "Through mentorship and real corporate simulation, I landed my first corporate role faster than I imagined.",
+    quote:
+      "Through mentorship and real corporate simulation, I landed my first corporate role faster than I imagined.",
     category: "placement",
     image: "/professional-man-corporate.jpg",
   },
@@ -29,7 +31,8 @@ const testimonials = [
     position: "Product Manager",
     company: "Gojek",
     logo: "GJK",
-    quote: "The leadership mindset I gained changed the direction of my life and career.",
+    quote:
+      "The leadership mindset I gained changed the direction of my life and career.",
     category: "leadership",
     image: "/professional-woman-tech.jpg",
   },
@@ -38,60 +41,74 @@ const testimonials = [
     position: "Senior Consultant",
     company: "Accenture",
     logo: "ACC",
-    quote: "The mentorship program accelerated my growth beyond what I thought possible.",
+    quote:
+      "The mentorship program accelerated my growth beyond what I thought possible.",
     category: "mentoring",
     image: "/professional-man-consultant.jpg",
   },
-]
+];
 
-const categories = ["All", "Leadership", "Placement", "Mentoring"]
+const categories = ["All", "Leadership", "Placement", "Mentoring"];
 
 export function LeadershipJourneys() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [activeCategory, setActiveCategory] = useState("All")
-  const [filteredTestimonials, setFilteredTestimonials] = useState(testimonials)
-  const [isAutoplay, setIsAutoplay] = useState(true)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [filteredTestimonials, setFilteredTestimonials] =
+    useState(testimonials);
+  const [isAutoplay, setIsAutoplay] = useState(true);
 
   useEffect(() => {
     if (activeCategory === "All") {
-      setFilteredTestimonials(testimonials)
+      setFilteredTestimonials(testimonials);
     } else {
-      setFilteredTestimonials(testimonials.filter((t) => t.category.toLowerCase() === activeCategory.toLowerCase()))
+      setFilteredTestimonials(
+        testimonials.filter(
+          (t) => t.category.toLowerCase() === activeCategory.toLowerCase()
+        )
+      );
     }
-    setActiveIndex(0)
-  }, [activeCategory])
+    setActiveIndex(0);
+  }, [activeCategory]);
 
   useEffect(() => {
-    if (!isAutoplay || filteredTestimonials.length === 0) return
+    if (!isAutoplay || filteredTestimonials.length === 0) return;
 
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % filteredTestimonials.length)
-    }, 6000)
+      setActiveIndex((prev) => (prev + 1) % filteredTestimonials.length);
+    }, 6000);
 
-    return () => clearInterval(interval)
-  }, [isAutoplay, filteredTestimonials.length])
+    return () => clearInterval(interval);
+  }, [isAutoplay, filteredTestimonials.length]);
 
   const goToPrevious = () => {
-    setIsAutoplay(false)
-    setActiveIndex((prev) => (prev - 1 + filteredTestimonials.length) % filteredTestimonials.length)
-  }
+    setIsAutoplay(false);
+    setActiveIndex(
+      (prev) =>
+        (prev - 1 + filteredTestimonials.length) % filteredTestimonials.length
+    );
+  };
 
   const goToNext = () => {
-    setIsAutoplay(false)
-    setActiveIndex((prev) => (prev + 1) % filteredTestimonials.length)
-  }
+    setIsAutoplay(false);
+    setActiveIndex((prev) => (prev + 1) % filteredTestimonials.length);
+  };
 
-  const currentTestimonial = filteredTestimonials[activeIndex]
+  const currentTestimonial = filteredTestimonials[activeIndex];
 
   return (
-    <section id="leadership-journeys" className="py-24 px-4 bg-gradient-to-b from-white to-muted">
+    <section
+      id="leadership-journeys"
+      className="py-24 px-4 bg-gradient-to-b from-white to-muted"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Leadership Journeys</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            Leadership Journeys
+          </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Real transformations from alumni who completed the Maxwell Leadership program and are now leading impact
-            across industries.
+            Real transformations from alumni who completed the Maxwell
+            Leadership program and are now leading impact across industries.
           </p>
         </div>
 
@@ -101,14 +118,14 @@ export function LeadershipJourneys() {
             <button
               key={category}
               onClick={() => {
-                setActiveCategory(category)
-                setIsAutoplay(true)
+                setActiveCategory(category);
+                setIsAutoplay(true);
               }}
               className={cn(
                 "px-6 py-2 rounded-full font-medium transition-all",
                 activeCategory === category
                   ? "bg-primary text-white shadow-lg"
-                  : "bg-white border border-border text-foreground hover:border-primary",
+                  : "bg-white border border-border text-foreground hover:border-primary"
               )}
             >
               {category}
@@ -122,11 +139,11 @@ export function LeadershipJourneys() {
             <div className="card-depth rounded-2xl overflow-hidden bg-white border border-border">
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Image Side */}
-                <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 min-h-96 md:min-h-full flex items-center justify-center p-8">
+                <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 min-h-96 md:min-h-full flex items-center justify-center p-4">
                   <img
                     src={currentTestimonial.image || "/placeholder.svg"}
                     alt={currentTestimonial.name}
-                    className="w-48 h-48 rounded-xl object-cover shadow-lg"
+                    className="w-full h-full rounded-xl object-cover shadow-lg"
                   />
                 </div>
 
@@ -146,9 +163,12 @@ export function LeadershipJourneys() {
 
                   {/* Author Info */}
                   <div>
-                    <p className="text-xl font-bold text-foreground">{currentTestimonial.name}</p>
+                    <p className="text-xl font-bold text-foreground">
+                      {currentTestimonial.name}
+                    </p>
                     <p className="text-base text-muted-foreground mb-4">
-                      {currentTestimonial.position} at {currentTestimonial.company}
+                      {currentTestimonial.position} at{" "}
+                      {currentTestimonial.company}
                     </p>
 
                     {/* Slide Indicators */}
@@ -158,7 +178,9 @@ export function LeadershipJourneys() {
                           key={index}
                           className={cn(
                             "h-2 rounded-full transition-all",
-                            index === activeIndex ? "w-8 bg-primary" : "w-2 bg-border",
+                            index === activeIndex
+                              ? "w-8 bg-primary"
+                              : "w-2 bg-border"
                           )}
                         />
                       ))}
@@ -188,9 +210,14 @@ export function LeadershipJourneys() {
 
         {/* CTA Section */}
         <div className="text-center mt-16 pt-12 border-t border-border/50">
-          <p className="text-xl text-foreground font-medium mb-6">Your journey starts today.</p>
+          <p className="text-xl text-foreground font-medium mb-6">
+            Your journey starts today.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white"
+            >
               Join Maxwell Leadership Program
             </Button>
             <Button
@@ -204,5 +231,5 @@ export function LeadershipJourneys() {
         </div>
       </div>
     </section>
-  )
+  );
 }

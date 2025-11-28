@@ -64,24 +64,39 @@ export function TimelineSection() {
           </p>
         </div>
 
-        <div className="flex justify-center items-center">
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary to-secondary" />
+
           {/* Steps */}
-          <div className="flex items-stretch gap-4">
+          <div className="space-y-12">
             {timelineSteps.map((item, index) => {
               const Icon = item.icon;
+              const isEven = index % 2 === 0;
 
               return (
-                <div key={index} className="flex-1 min-w-[280px] max-w-[350px]">
+                <div key={index} className="relative">
+                  {/* Timeline dot */}
+                  <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-3 z-10">
+                    <div className="w-12 h-12 rounded-full bg-white border-4 border-primary flex items-center justify-center">
+                      <CheckCircle2 size={20} className="text-primary" />
+                    </div>
+                  </div>
+
                   {/* Content */}
-                  <div className="h-full">
-                    <div className="animate-slide-up bg-white p-6 rounded-xl border border-border hover:border-primary/30 transition-all h-full flex flex-col">
+                  <div
+                    className={`md:w-1/2 ${
+                      isEven ? "md:mr-auto md:pr-12" : "md:ml-auto md:pl-12"
+                    }`}
+                  >
+                    <div className="animate-slide-up bg-white p-6 rounded-xl border border-border hover:border-primary/30 transition-all">
                       <div className="flex items-start gap-4">
                         <div
                           className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${item.color}`}
                         >
                           <Icon size={20} />
                         </div>
-                        <div className="flex-1">
+                        <div>
                           <div className="flex items-center gap-3 mb-2">
                             <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">
                               Step {item.step}

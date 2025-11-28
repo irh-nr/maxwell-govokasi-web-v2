@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavigationProps {
   userType: "talent" | "company";
@@ -37,12 +38,29 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
           <div className="flex items-center gap-2">
             <span
               className={cn(
-                "font-bold text-lg inline",
+                "font-bold text-lg hidden",
                 isScrolled ? "text-primary" : "text-white"
               )}
             >
               Maxwell
             </span>
+            {isScrolled ? (
+              <Image
+                src={"/maxwell-logo/maxwell.png"}
+                alt="Maxwell Logo"
+                height={100}
+                width={100}
+                className="pb-4"
+              />
+            ) : (
+              <Image
+                src={"/maxwell-logo/maxwell-white.png"}
+                alt="Maxwell Logo"
+                height={100}
+                width={100}
+                className="pb-1"
+              />
+            )}
             <span className="text-muted-foreground mx-1">×</span>
             <span
               className={cn(
@@ -50,7 +68,7 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
                 isScrolled ? "" : "text-white"
               )}
             >
-              Govokasi
+              GOVOKASi
             </span>
           </div>
 

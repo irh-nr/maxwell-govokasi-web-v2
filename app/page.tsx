@@ -22,8 +22,8 @@ export default function Home() {
       <DualCustomerFlow />
       <LeadershipJourneys />
       <ProgramsSection />
-      <TimelineSection />
       <CoachesSection />
+      <TimelineSection />
       <TestimonialsSection />
       <CtaBanner />
       <Footer />

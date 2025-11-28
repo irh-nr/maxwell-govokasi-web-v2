@@ -1,4 +1,5 @@
 import { Linkedin, Twitter, Mail } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,8 +8,16 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-bold">Maxwell x Govokasi</span>
+            <div className="flex items-center gap-2 mb-4 max-h-8">
+              <Image
+                src={"/maxwell-logo/maxwell-white.png"}
+                alt="Maxwell Logo"
+                height={100}
+                width={100}
+                className="pb-1"
+              />
+              <span className="text-muted-foreground mx-1">×</span>
+              <span className="font-bold">GOVOKASi</span>
             </div>
             <p className="text-white/70 text-sm max-w-56">
               Connecting young talent with top corporate opportunities
