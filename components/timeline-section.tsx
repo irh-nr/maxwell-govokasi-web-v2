@@ -53,7 +53,7 @@ export function TimelineSection() {
       id="journey"
       className="py-20 px-4 bg-gradient-to-b from-white to-muted"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Your Journey
@@ -64,43 +64,44 @@ export function TimelineSection() {
           </p>
         </div>
 
-        <div className="flex justify-center items-center">
-          {/* Steps */}
-          <div className="flex items-stretch gap-4">
-            {timelineSteps.map((item, index) => {
-              const Icon = item.icon;
+        {/* Steps */}
+        <div className="flex flex-wrap justify-center items-center">
+          {timelineSteps.map((item, index) => {
+            const Icon = item.icon;
 
-              return (
-                <div key={index} className="flex-1 min-w-[280px] max-w-[350px]">
-                  {/* Content */}
-                  <div className="h-full">
-                    <div className="animate-slide-up bg-white p-6 rounded-xl border border-border hover:border-primary/30 transition-all h-full flex flex-col">
-                      <div className="flex items-start gap-4">
-                        <div
-                          className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${item.color}`}
-                        >
-                          <Icon size={20} />
+            return (
+              <div
+                key={index}
+                className="flex-1 min-w-[300px] max-w-[350px] p-4 "
+              >
+                {/* Content */}
+                <div className="h-full">
+                  <div className="animate-slide-up bg-white p-6 rounded-xl border border-border hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div className="flex flex-col items-center gap-4 text-center">
+                      <div
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${item.color}`}
+                      >
+                        <Icon size={20} />
+                      </div>
+                      <div className="flex flex-col items-center justify-center">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">
+                            Step {item.step}
+                          </span>
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-2">
-                            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">
-                              Step {item.step}
-                            </span>
-                          </div>
-                          <h3 className="text-xl font-bold text-foreground mb-1">
-                            {item.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm">
-                            {item.description}
-                          </p>
-                        </div>
+                        <h3 className="text-xl font-bold text-foreground mb-1">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

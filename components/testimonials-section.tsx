@@ -50,7 +50,7 @@ export function TestimonialsSection() {
           </p>
         </div>
       </div>
-      <div className="px-20">
+      <div className="lg:px-20 px-2">
         <Marquee className="h-80" gradient={true}>
           <div className="flex">
             {testimonials.map((testimonial, index) => (

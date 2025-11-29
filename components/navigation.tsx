@@ -137,11 +137,11 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
 
           {/* Mobile Menu Toggle */}
           <button
-            className={cn("md:hidden p-2", isScrolled ? "flex" : "hidden")}
+            className={cn("md:hidden p-2")}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X size={24} />
+              <X size={24} color={isScrolled ? "black" : "white"} />
             ) : (
               <Menu size={24} color={isScrolled ? "black" : "white"} />
             )}
@@ -150,8 +150,8 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
-            <div className="flex flex-col gap-3">
+          <div className="md:hidden pb-4 animate-fade-in animate-accordion-down bg-white rounded-lg">
+            <div className="flex flex-col gap-3 p-4">
               {navLinks.map((link) => (
                 <a
                   key={link}
@@ -162,34 +162,36 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t">
-                <button
-                  onClick={() => {
-                    setUserType("talent");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={cn(
-                    "px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                    userType === "talent"
-                      ? "bg-primary text-white"
-                      : "bg-muted text-foreground"
-                  )}
-                >
-                  I'm Talent
-                </button>
-                <button
-                  onClick={() => {
-                    setUserType("company");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={cn(
-                    "px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                    userType === "company"
-                      ? "bg-primary text-white"
-                      : "bg-muted text-foreground"
-                  )}
-                >
-                  I'm Company
-                </button>
+                <div className="flex flex-col gap-2 bg-muted rounded-lg">
+                  <button
+                    onClick={() => {
+                      setUserType("talent");
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-sm font-medium transition-all",
+                      userType === "talent"
+                        ? "bg-primary text-white"
+                        : "bg-muted text-foreground"
+                    )}
+                  >
+                    I'm Talent
+                  </button>
+                  <button
+                    onClick={() => {
+                      setUserType("company");
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-sm font-medium transition-all",
+                      userType === "company"
+                        ? "bg-primary text-white"
+                        : "bg-muted text-foreground"
+                    )}
+                  >
+                    I'm Company
+                  </button>
+                </div>
                 <button className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
                   Get Started
                 </button>
