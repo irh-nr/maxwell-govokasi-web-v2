@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4 max-h-8">
               <Image
-                src={"/maxwell-logo/maxwell-white.png"}
+                src={"/brand-logo/maxwell-white.png"}
                 alt="Maxwell Logo"
                 height={100}
                 width={100}
