@@ -119,7 +119,7 @@ export function CoachesSection() {
           {/* Carousel Track */}
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-500 ease-out my-8"
+              className="flex transition-transform duration-500 ease-out my-8 items-center"
               style={{
                 transform: `translateX(-${
                   currentIndex * (100 / itemsPerPage)
@@ -129,7 +129,7 @@ export function CoachesSection() {
               {coaches.map((coach, index) => (
                 <div
                   key={index}
-                  className="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-4"
+                  className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
                 >
                   <div className="flex flex-col gap-4 card-depth group bg-white rounded-xl border border-border hover:border-primary/30 transition-all h-full">
                     {/* Picture */}
