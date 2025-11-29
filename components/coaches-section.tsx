@@ -1,4 +1,5 @@
-import { Star, Linkedin } from "lucide-react";
+import { Star, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const coaches = [
   {
@@ -46,6 +47,42 @@ const coaches = [
 ];
 
 export function CoachesSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const itemsPerPage =
+    typeof window !== "undefined" && window.innerWidth >= 1024
+      ? 3
+      : window.innerWidth >= 768
+      ? 2
+      : 1;
+  const maxIndex = Math.max(0, coaches.length - itemsPerPage);
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, maxIndex]);
+
+  const handlePrev = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
+  const handleNext = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  const goToSlide = (index: any) => {
+    setIsAutoPlaying(false);
+    setCurrentIndex(index);
+  };
+
   return (
     <section
       id="coaches"
@@ -62,53 +99,103 @@ export function CoachesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {coaches.map((coach, index) => (
+        {/* Carousel Container */}
+        <div className="relative px-8 py-0">
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 p-3 bg-white rounded-full shadow-lg hover:bg-primary/5 transition-all"
+          >
+            <ChevronLeft className="text-primary" size={24} />
+          </button>
+
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 p-3 bg-white rounded-full shadow-lg hover:bg-primary/5 transition-all"
+          >
+            <ChevronRight className="text-primary" size={24} />
+          </button>
+
+          {/* Carousel Track */}
+          <div className="overflow-hidden">
             <div
-              key={index}
-              className="flex gap-4 card-depth group p-6 bg-white rounded-xl border border-border hover:border-primary/30 transition-all"
+              className="flex transition-transform duration-500 ease-out my-8"
+              style={{
+                transform: `translateX(-${
+                  currentIndex * (100 / itemsPerPage)
+                }%)`,
+              }}
             >
-              {/* Avatar */}
-              <div className="w-40 h-full bg-gradient-to-br from-primary to-secondary rounded-lg mb-4 flex items-center justify-center text-white font-bold text-xl">
-                {coach.name.charAt(0)}
-                {coach.name.split(" ")[1].charAt(0)}
-              </div>
-              <div>
-                {/* Info */}
-                <h3 className="text-xl font-bold text-foreground mb-1">
-                  {coach.name}
-                </h3>
-                <p className="text-primary font-semibold text-sm mb-1">
-                  {coach.position}
-                </p>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {coach.company}
-                </p>
+              {coaches.map((coach, index) => (
+                <div
+                  key={index}
+                  className="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-4"
+                >
+                  <div className="flex flex-col gap-4 card-depth group bg-white rounded-xl border border-border hover:border-primary/30 transition-all h-full">
+                    {/* Picture */}
+                    <div className="w-full h-60 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                      {coach.name.charAt(0)}
+                      {coach.name.split(" ")[1].charAt(0)}
+                    </div>
+                    <div className="p-4 text-center">
+                      {/* Info */}
+                      <h3 className="text-xl font-bold text-foreground mb-1">
+                        {coach.name}
+                      </h3>
+                      <p className="text-primary font-semibold text-sm mb-1">
+                        {coach.position}
+                      </p>
+                      <p className="text-muted-foreground text-sm mb-4">
+                        {coach.company}
+                      </p>
 
-                {/* Expertise Tag */}
-                <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4">
-                  {coach.expertise}
-                </div>
+                      {/* Expertise Tag */}
+                      <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4">
+                        {coach.expertise}
+                      </div>
 
-                {/* Bio */}
-                <p className="text-muted-foreground text-sm mb-6 line-clamp-2">
-                  {coach.bio}
-                </p>
+                      {/* Bio */}
+                      <p className="text-muted-foreground text-sm mb-6 line-clamp-2">
+                        {coach.bio}
+                      </p>
 
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={14} fill="#31006f" stroke="#31006f" />
-                    ))}
+                      {/* Footer */}
+                      <div className="flex items-center justify-between pt-4 border-t">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              size={14}
+                              fill="#31006f"
+                              stroke="#31006f"
+                            />
+                          ))}
+                        </div>
+                        <button className="p-2 hover:bg-primary/10 rounded-lg transition-all">
+                          <Linkedin size={16} className="text-primary" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <button className="p-2 hover:bg-primary/10 rounded-lg transition-all">
-                    <Linkedin size={16} className="text-primary" />
-                  </button>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {[...Array(maxIndex + 1)].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`h-2 rounded-full transition-all ${
+                  currentIndex === index
+                    ? "w-8 bg-primary"
+                    : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">

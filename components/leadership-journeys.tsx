@@ -136,7 +136,7 @@ export function LeadershipJourneys() {
         {/* Carousel */}
         {currentTestimonial && (
           <div className="relative">
-            <div className="card-depth rounded-2xl overflow-hidden bg-white border border-border">
+            <div className="card-depth rounded-2xl overflow-hidden bg-white border border-border p-4">
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Image Side */}
                 <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 min-h-96 md:min-h-full flex items-center justify-center p-4">
