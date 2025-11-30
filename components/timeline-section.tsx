@@ -44,7 +44,7 @@ export function TimelineSection() {
   return (
     <section
       id="journey"
-      className="py-20 px-4 bg-gradient-to-b from-white to-muted"
+      className="py-20 px-4 bg-linear-to-b from-white to-muted"
     >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
@@ -72,7 +72,7 @@ export function TimelineSection() {
                   <div className="animate-slide-up bg-white p-6 rounded-xl border border-border hover:border-primary/30 transition-all h-full flex flex-col">
                     <div className="flex flex-col items-center gap-4 text-center">
                       <div
-                        className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${item.color}`}
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center shrink-0 ${item.color}`}
                       >
                         <Icon size={20} />
                       </div>

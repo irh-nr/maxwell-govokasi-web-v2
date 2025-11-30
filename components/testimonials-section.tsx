@@ -56,7 +56,7 @@ export function TestimonialsSection() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="card-depth p-8 m-4 bg-gradient-to-br from-muted to-white rounded-xl border border-border hover:border-accent/50 transition-all"
+                className="card-depth p-8 m-4 bg-linear-to-brrom-muted to-white rounded-xl border border-border hover:border-accent/50 transition-all"
               >
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
@@ -72,7 +72,7 @@ export function TestimonialsSection() {
 
                 {/* Author */}
                 <div className="flex items-center gap-4 pt-6 border-t">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-linear-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.avatar}
                   </div>
                   <div>

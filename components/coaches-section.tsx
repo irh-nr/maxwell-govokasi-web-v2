@@ -94,7 +94,7 @@ export function CoachesSection() {
   return (
     <section
       id="coaches"
-      className="py-20 px-4 bg-gradient-to-b from-white to-muted"
+      className="py-20 px-4 bg-linear-to-b from-white to-muted"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
@@ -137,11 +137,11 @@ export function CoachesSection() {
               {coaches.map((coach, index) => (
                 <div
                   key={index}
-                  className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+                  className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4"
                 >
                   <div className="flex flex-col gap-4 card-depth group bg-white rounded-xl border border-border hover:border-primary/30 transition-all h-full">
                     {/* Picture */}
-                    <div className="w-full h-60 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-full h-60 bg-linear-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-xl">
                       {coach.name.charAt(0)}
                       {coach.name.split(" ")[1].charAt(0)}
                     </div>

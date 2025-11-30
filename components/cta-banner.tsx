@@ -2,7 +2,7 @@ export function CtaBanner() {
   return (
     <section
       id="cta"
-      className="py-20 px-4 bg-gradient-to-r from-primary via-primary/80 to-secondary"
+      className="py-20 px-4 bg-linear-to-r from-primary via-primary/80 to-secondary"
     >
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">

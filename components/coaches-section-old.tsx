@@ -49,7 +49,7 @@ export function CoachesSection() {
   return (
     <section
       id="coaches"
-      className="py-20 px-4 bg-gradient-to-b from-white to-muted"
+      className="py-20 px-4 bg-linear-to-b from-white to-muted"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
@@ -69,7 +69,7 @@ export function CoachesSection() {
               className="flex gap-4 card-depth group p-6 bg-white rounded-xl border border-border hover:border-primary/30 transition-all"
             >
               {/* Avatar */}
-              <div className="w-40 h-full bg-gradient-to-br from-primary to-secondary rounded-lg mb-4 flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-40 h-full bg-linear-to-br from-primary to-secondary rounded-lg mb-4 flex items-center justify-center text-white font-bold text-xl">
                 {coach.name.charAt(0)}
                 {coach.name.split(" ")[1].charAt(0)}
               </div>

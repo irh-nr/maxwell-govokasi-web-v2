@@ -23,7 +23,12 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = ["Programs", "Journey", "Coaches", "Contact"];
+  const navLinks = [
+    { name: "Programs", link: "/#programs" },
+    { name: "Services", link: "/services" },
+    { name: "About Us", link: "about" },
+    { name: "Contact", link: "/#contact" },
+  ];
 
   return (
     <nav
@@ -85,46 +90,23 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {navLinks.map((link, index) => (
               <Link
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={index}
+                href={link.link}
                 className={cn(
                   "text-sm font-medium text-foreground animate-hover-nav transition-colors",
                   isScrolled ? "" : "text-white"
                 )}
               >
-                {link}
+                {link.name}
               </Link>
             ))}
           </div>
 
           {/* Segment Selector */}
           <div className="hidden md:flex items-center gap-4">
-            <div className="flex bg-muted rounded-full p-1">
-              <button
-                onClick={() => setUserType("talent")}
-                className={cn(
-                  "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                  userType === "talent"
-                    ? "bg-primary text-white"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                I'm Talent
-              </button>
-              <button
-                onClick={() => setUserType("company")}
-                className={cn(
-                  "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                  userType === "company"
-                    ? "bg-primary text-white"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                I'm Company
-              </button>
-            </div>
+            <div className="flex rounded-full p-1"></div>
             <button
               className={cn(
                 "px-6 py-2 rounded-lg transition-colors text-sm font-medium",
@@ -160,49 +142,20 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 animate-fade-in animate-accordion-down bg-white rounded-lg">
             <div className="flex flex-col gap-3 p-4">
-              {navLinks.map((link) => (
+              {navLinks.map((link, index) => (
                 <Link
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+                  key={index}
+                  href={link.link}
                   className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                   }}
                 >
-                  {link}
+                  {link.name}
                 </Link>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t">
-                <div className="flex flex-col gap-2 bg-muted rounded-lg">
-                  <button
-                    onClick={() => {
-                      setUserType("talent");
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                      userType === "talent"
-                        ? "bg-primary text-white"
-                        : "bg-muted text-foreground"
-                    )}
-                  >
-                    I'm Talent
-                  </button>
-                  <button
-                    onClick={() => {
-                      setUserType("company");
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                      userType === "company"
-                        ? "bg-primary text-white"
-                        : "bg-muted text-foreground"
-                    )}
-                  >
-                    I'm Company
-                  </button>
-                </div>
+                <div className="flex flex-col gap-2 rounded-lg"></div>
                 <button className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
                   <Link
                     href={"#cta"}

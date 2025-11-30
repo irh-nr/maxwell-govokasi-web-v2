@@ -20,7 +20,7 @@
   --muted: #f4f4f4;
   --muted-foreground: oklch(0.556 0 0);
   /* Updated accent color to Maxwell gold #C3A464 */
-  --accent: #c3a464;
+  --accent: #ededed;
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -59,7 +59,7 @@
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   /* Updated accent color for dark mode to Maxwell gold */
-  --accent: #c3a464;
+  --accent: #ededed;
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
@@ -149,7 +149,7 @@
     @apply relative inline-block
          after:content-['']
          after:absolute after:left-1/2 after:-bottom-1
-         after:-translate-x-1/2 after:w-0 after:h-[2px]
+         after:-translate-x-1/2 after:w-0 after:h-0.5
          after:bg-current
          after:transition-all after:duration-200
          hover:after:w-full;

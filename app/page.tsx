@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Navigation } from "@/components/navigation";
+import { Navigation } from "@/components/navigation-v2";
 import { HeroSection } from "@/components/hero-section";
 import { DualCustomerFlow } from "@/components/dual-customer-flow";
 import { CoachesSection } from "@/components/coaches-section";

@@ -98,7 +98,7 @@ export function LeadershipJourneys() {
   return (
     <section
       id="leadership-journeys"
-      className="py-24 px-4 bg-gradient-to-b from-white to-muted"
+      className="py-24 px-4 bg-linear-to-b from-white to-muted"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -139,7 +139,7 @@ export function LeadershipJourneys() {
             <div className="card-depth rounded-2xl overflow-hidden bg-white border border-border p-4">
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Image Side */}
-                <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 min-h-96 md:min-h-full flex items-center justify-center p-4">
+                <div className="relative bg-linear-to-br from-primary/10 to-secondary/10 min-h-96 md:min-h-full flex items-center justify-center rounded-lg p-4">
                   <img
                     src={currentTestimonial.image || "/placeholder.svg"}
                     alt={currentTestimonial.name}
@@ -150,7 +150,7 @@ export function LeadershipJourneys() {
                 {/* Content Side */}
                 <div className="p-10 md:p-12 flex flex-col justify-between">
                   {/* Company Logo */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg mb-6 shadow-md">
+                  <div className="w-16 h-16 bg-linear-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg mb-6 shadow-md">
                     {currentTestimonial.logo}
                   </div>
 
