@@ -168,19 +168,12 @@ export function CoachesSection() {
                       </p>
 
                       {/* Footer */}
-                      <div className="flex items-center justify-between pt-4 border-t">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              size={14}
-                              fill="#31006f"
-                              stroke="#31006f"
-                            />
-                          ))}
-                        </div>
-                        <button className="p-2 hover:bg-primary/10 rounded-lg transition-all">
-                          <Linkedin size={16} className="text-primary" />
+                      <div className="flex items-center justify-center pt-4 border-t">
+                        <button className="px-2 py-1 hover:bg-primary/10 rounded-lg transition-all text-primary">
+                          <div className="flex justify-center items-center gap-2">
+                            <span className="pt-1">LinkedIn</span>
+                            <Linkedin size={16} className="text-primary" />
+                          </div>
                         </button>
                       </div>
                     </div>
