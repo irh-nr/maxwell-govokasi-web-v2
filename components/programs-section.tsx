@@ -100,13 +100,13 @@ export function ProgramsSection() {
                 {/* Meta */}
                 <div className="space-y-2 mb-6 pb-6 border-b">
                   <div className="flex items-center gap-2 text-sm">
-                    <Clock size={14} className="text-accent" />
+                    <Clock size={14} className="text-primary" />
                     <span className="text-muted-foreground">
                       {program.duration}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Target size={14} className="text-accent" />
+                    <Target size={14} className="text-primary" />
                     <span
                       className={cn(
                         "px-2 py-1 rounded text-xs font-semibold",
