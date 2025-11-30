@@ -159,7 +159,7 @@ export function Navigation() {
                   <Link href={"/#programs"}>Programs</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="p-4">
-                  <h6 className="pl-2.5 font-semibold uppercase text-sm text-muted-foreground">
+                  <h6 className="pl-2.5 font-semibold uppercase text-sm text-primary">
                     Our Programs
                   </h6>
                   <ul className="mt-2.5 grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
