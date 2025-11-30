@@ -24,12 +24,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-interface NavigationProps {
-  userType: "talent" | "company";
-  setUserType: (type: "talent" | "company") => void;
-}
-
-export function Navigation({ userType, setUserType }: NavigationProps) {
+export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -92,54 +87,56 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <span
-              className={cn(
-                "font-bold text-lg hidden",
-                isScrolled ? "text-primary" : "text-white"
+          <Link href={"/"}>
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <span
+                className={cn(
+                  "font-bold text-lg hidden",
+                  isScrolled ? "text-primary" : "text-white"
+                )}
+              >
+                Maxwell
+              </span>
+              {isScrolled ? (
+                <Image
+                  src={"/brand-logo/maxwell.png"}
+                  alt="Maxwell Logo"
+                  height={100}
+                  width={100}
+                  className="pb-4"
+                />
+              ) : (
+                <Image
+                  src={"/brand-logo/maxwell-white.png"}
+                  alt="Maxwell Logo"
+                  height={100}
+                  width={100}
+                  className="pb-1"
+                />
               )}
-            >
-              Maxwell
-            </span>
-            {isScrolled ? (
-              <Image
-                src={"/brand-logo/maxwell.png"}
-                alt="Maxwell Logo"
-                height={100}
-                width={100}
-                className="pb-4"
-              />
-            ) : (
-              <Image
-                src={"/brand-logo/maxwell-white.png"}
-                alt="Maxwell Logo"
-                height={100}
-                width={100}
-                className="pb-1"
-              />
-            )}
-            <span className="text-muted-foreground mx-1 pointer-events-none">
-              ×
-            </span>
-            {isScrolled ? (
-              <Image
-                src={"/brand-logo/GV-Blue.png"}
-                alt="GOVOKASi Logo"
-                height={100}
-                width={100}
-                className="pt-1"
-              />
-            ) : (
-              <Image
-                src={"/brand-logo/GV-white.png"}
-                alt="GOVOKASi Logo"
-                height={100}
-                width={100}
-                className="pt-2"
-              />
-            )}
-          </div>
+              <span className="text-muted-foreground mx-1 pointer-events-none">
+                ×
+              </span>
+              {isScrolled ? (
+                <Image
+                  src={"/brand-logo/GV-Blue.png"}
+                  alt="GOVOKASi Logo"
+                  height={100}
+                  width={100}
+                  className="pt-1"
+                />
+              ) : (
+                <Image
+                  src={"/brand-logo/GV-white.png"}
+                  alt="GOVOKASi Logo"
+                  height={100}
+                  width={100}
+                  className="pt-2"
+                />
+              )}
+            </div>
+          </Link>
 
           {/* Desktop Menu */}
           <NavigationMenu className="z-20">
@@ -159,7 +156,7 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
                       : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
                   )}
                 >
-                  Programs
+                  <Link href={"/#programs"}>Programs</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="p-4">
                   <h6 className="pl-2.5 font-semibold uppercase text-sm text-muted-foreground">

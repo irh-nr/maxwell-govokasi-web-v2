@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { Navigation } from "@/components/navigation-v2";
 import "./globals.css";
 
 const _Work_Sans = Work_Sans({ subsets: ["latin"] });
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased bg-background text-foreground`}>
+        <Navigation />
         {children}
         <Analytics />
       </body>

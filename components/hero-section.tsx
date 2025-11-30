@@ -1,74 +1,87 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { cn } from "@/lib/utils"
-
-interface HeroSectionProps {
-  userType: "talent" | "company"
-}
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const heroSlides = [
   {
     headline: "Transform Your Career With World-Class Coaching",
-    subheadline: "Learn from corporate mentors and accelerate your professional growth",
-    backgroundClass: "bg-gradient-to-br from-primary via-primary/80 to-secondary",
+    subheadline:
+      "Learn from corporate mentors and accelerate your professional growth",
+    backgroundClass:
+      "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     cta: "Start Your Journey",
   },
   {
     headline: "Build the Corporate Future With Proven Talent",
-    subheadline: "Connect with exceptional young professionals ready for impact",
-    backgroundClass: "bg-gradient-to-br from-secondary via-primary/70 to-primary",
+    subheadline:
+      "Connect with exceptional young professionals ready for impact",
+    backgroundClass:
+      "bg-gradient-to-br from-secondary via-primary/70 to-primary",
     cta: "Find Top Talent",
   },
   {
     headline: "Accelerate Growth Through Mentorship & Placement",
     subheadline: "Real projects, real coaching, real opportunities await",
-    backgroundClass: "bg-gradient-to-br from-primary/90 via-secondary to-primary",
+    backgroundClass:
+      "bg-gradient-to-br from-primary/90 via-secondary to-primary",
     cta: "Explore Programs",
   },
   {
     headline: "Empowering Talent, Empowering Companies",
     subheadline: "Together we create meaningful career transformations",
-    backgroundClass: "bg-gradient-to-br from-secondary/95 via-primary to-secondary",
+    backgroundClass:
+      "bg-gradient-to-br from-secondary/95 via-primary to-secondary",
     cta: "Get Started",
   },
-]
+];
 
-export function HeroSection({ userType }: HeroSectionProps) {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [autoPlay, setAutoPlay] = useState(true)
+export function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
 
   useEffect(() => {
-    if (!autoPlay) return
+    if (!autoPlay) return;
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [autoPlay])
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [autoPlay]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    setAutoPlay(false)
-  }
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    setAutoPlay(false);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
-    setAutoPlay(false)
-  }
+    setCurrentSlide(
+      (prev) => (prev - 1 + heroSlides.length) % heroSlides.length
+    );
+    setAutoPlay(false);
+  };
 
-  const slide = heroSlides[currentSlide]
+  const slide = heroSlides[currentSlide];
 
   return (
     <section className="relative w-full h-screen pt-20 overflow-hidden">
       {/* Background */}
-      <div className={cn("absolute inset-0 transition-all duration-1000 ease-out", slide.backgroundClass)} />
+      <div
+        className={cn(
+          "absolute inset-0 transition-all duration-1000 ease-out",
+          slide.backgroundClass
+        )}
+      />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">{slide.headline}</h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">{slide.subheadline}</p>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            {slide.headline}
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
+            {slide.subheadline}
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
               {slide.cta}
@@ -94,12 +107,12 @@ export function HeroSection({ userType }: HeroSectionProps) {
             <button
               key={index}
               onClick={() => {
-                setCurrentSlide(index)
-                setAutoPlay(false)
+                setCurrentSlide(index);
+                setAutoPlay(false);
               }}
               className={cn(
                 "h-2 rounded-full transition-all",
-                currentSlide === index ? "bg-white w-8" : "bg-white/40 w-2",
+                currentSlide === index ? "bg-white w-8" : "bg-white/40 w-2"
               )}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -114,5 +127,5 @@ export function HeroSection({ userType }: HeroSectionProps) {
         </button>
       </div>
     </section>
-  )
+  );
 }
