@@ -139,71 +139,73 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Menu */}
-          <NavigationMenu className="z-20">
-            <NavigationMenuList className="space-x-8">
-              <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn(
-                    "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
-                    "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
-                    "hover:before:scale-x-100",
-                    "focus:before:scale-x-100 focus:outline-hidden",
-                    "disabled:pointer-events-none disabled:opacity-50",
-                    "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
-                    "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
-                    isScrolled
-                      ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
-                      : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
-                  )}
-                >
-                  <Link href={"/#programs"}>Programs</Link>
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="p-4">
-                  <h6 className="pl-2.5 font-semibold uppercase text-sm text-primary">
-                    Our Programs
-                  </h6>
-                  <ul className="mt-2.5 grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {programs.map((component, index) => (
-                      <ListItem
-                        key={index}
-                        title={component.title}
-                        icon={component.icon}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              {navLinksStatic.map((link, index) => (
-                <NavigationMenuItem key={index}>
-                  <NavigationMenuLink
+          <div className="hidden md:flex items-center">
+            <NavigationMenu className="z-20">
+              <NavigationMenuList className="space-x-8">
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
                     className={cn(
                       "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
                       "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
                       "hover:before:scale-x-100",
                       "focus:before:scale-x-100 focus:outline-hidden",
                       "disabled:pointer-events-none disabled:opacity-50",
-                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100",
-                      "hover:bg-transparent active:bg-transparent focus:bg-transparent",
+                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
+                      "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
                       isScrolled
-                        ? "text-primary hover:text-primary focus-text-primary before:bg-primary"
-                        : "text-white hover:text-white focus:text-white before:bg-white"
+                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
                     )}
-                    asChild
                   >
-                    <Link
-                      href={link.href}
-                      className="flex-row items-center gap-2.5"
-                    >
-                      {link.name}
-                    </Link>
-                  </NavigationMenuLink>
+                    <Link href={"/#programs"}>Programs</Link>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-4">
+                    <h6 className="pl-2.5 font-semibold uppercase text-sm text-primary">
+                      Our Programs
+                    </h6>
+                    <ul className="mt-2.5 grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {programs.map((component, index) => (
+                        <ListItem
+                          key={index}
+                          title={component.title}
+                          icon={component.icon}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+
+                {navLinksStatic.map((link, index) => (
+                  <NavigationMenuItem key={index}>
+                    <NavigationMenuLink
+                      className={cn(
+                        "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
+                        "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
+                        "hover:before:scale-x-100",
+                        "focus:before:scale-x-100 focus:outline-hidden",
+                        "disabled:pointer-events-none disabled:opacity-50",
+                        "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100",
+                        "hover:bg-transparent active:bg-transparent focus:bg-transparent",
+                        isScrolled
+                          ? "text-primary hover:text-primary focus-text-primary before:bg-primary"
+                          : "text-white hover:text-white focus:text-white before:bg-white"
+                      )}
+                      asChild
+                    >
+                      <Link
+                        href={link.href}
+                        className="flex-row items-center gap-2.5"
+                      >
+                        {link.name}
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
           {/* Segment Selector */}
           <div className="hidden md:flex items-center gap-4">
@@ -243,6 +245,12 @@ export function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 animate-fade-in animate-accordion-down bg-white rounded-lg">
             <div className="flex flex-col gap-3 p-4">
+              <Link
+                href={"/#programs"}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
+              >
+                Programs
+              </Link>
               {navLinksStatic.map((link, index) => (
                 <Link
                   key={index}
