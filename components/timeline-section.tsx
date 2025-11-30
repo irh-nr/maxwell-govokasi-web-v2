@@ -1,11 +1,4 @@
-import {
-  CheckCircle2,
-  User,
-  Target,
-  Briefcase,
-  Zap,
-  Award,
-} from "lucide-react";
+import { User, Target, Briefcase, Zap, Award } from "lucide-react";
 
 const timelineSteps = [
   {

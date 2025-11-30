@@ -1,4 +1,4 @@
-import { Star, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+import { Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const coaches = [
@@ -172,7 +172,7 @@ export function CoachesSection() {
                         <button className="px-2 py-1 hover:bg-primary/10 rounded-lg transition-all text-primary">
                           <div className="flex justify-center items-center gap-2">
                             <span className="pt-1">LinkedIn</span>
-                            <Linkedin size={16} className="text-primary" />
+                            <Linkedin size={20} className="text-primary" />
                           </div>
                         </button>
                       </div>

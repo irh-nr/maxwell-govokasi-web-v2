@@ -61,7 +61,9 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
                 className="pb-1"
               />
             )}
-            <span className="text-muted-foreground mx-1">×</span>
+            <span className="text-muted-foreground mx-1 pointer-events-none">
+              ×
+            </span>
             {isScrolled ? (
               <Image
                 src={"/brand-logo/GV-Blue.png"}
@@ -131,7 +133,7 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
                   : "bg-white text-primary  hover:bg-white/90"
               )}
             >
-              Get Started
+              <Link href={"#cta"}>Get Started</Link>
             </button>
           </div>
 
@@ -141,9 +143,15 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X size={24} color={isScrolled ? "black" : "white"} />
+              <X
+                size={24}
+                className={cn(isScrolled ? "text-primary" : "text-white")}
+              />
             ) : (
-              <Menu size={24} color={isScrolled ? "black" : "white"} />
+              <Menu
+                size={24}
+                className={cn(isScrolled ? "text-primary" : "text-white")}
+              />
             )}
           </button>
         </div>
@@ -153,13 +161,16 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
           <div className="md:hidden pb-4 animate-fade-in animate-accordion-down bg-white rounded-lg">
             <div className="flex flex-col gap-3 p-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link}
                   href={`#${link.toLowerCase()}`}
                   className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   {link}
-                </a>
+                </Link>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t">
                 <div className="flex flex-col gap-2 bg-muted rounded-lg">
@@ -193,7 +204,14 @@ export function Navigation({ userType, setUserType }: NavigationProps) {
                   </button>
                 </div>
                 <button className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
-                  Get Started
+                  <Link
+                    href={"#cta"}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Get Started
+                  </Link>
                 </button>
               </div>
             </div>

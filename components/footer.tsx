@@ -16,7 +16,9 @@ export function Footer() {
                 width={100}
                 className="pb-1"
               />
-              <span className="text-muted-foreground mx-1">×</span>
+              <span className="text-muted-foreground mx-1 pointer-events-none">
+                ×
+              </span>
               <Image
                 src={"/brand-logo/GV-white.png"}
                 alt="GOVOKASi Logo"
