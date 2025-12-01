@@ -37,9 +37,10 @@ export function Navigation() {
   }, []);
 
   const navLinksStatic = [
-    { name: "Services", href: "/services" },
-    { name: "About Us", href: "about" },
-    { name: "Contact", href: "/#contact" },
+    { name: "About", href: "/#about" },
+    { name: "How It Works", href: "/#how-it-works" },
+    { name: "Curriculum", href: "/#curriculum" },
+    { name: "Success Stories", href: "/#success-stories" },
   ];
 
   const programs = [
@@ -142,41 +143,6 @@ export function Navigation() {
           <div className="hidden md:flex items-center">
             <NavigationMenu className="z-20">
               <NavigationMenuList className="space-x-8">
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger
-                    className={cn(
-                      "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
-                      "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
-                      "hover:before:scale-x-100",
-                      "focus:before:scale-x-100 focus:outline-hidden",
-                      "disabled:pointer-events-none disabled:opacity-50",
-                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
-                      "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
-                      isScrolled
-                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
-                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
-                    )}
-                  >
-                    <Link href={"/#programs"}>Programs</Link>
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="p-4">
-                    <h6 className="pl-2.5 font-semibold uppercase text-sm text-primary">
-                      Our Programs
-                    </h6>
-                    <ul className="mt-2.5 grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {programs.map((component, index) => (
-                        <ListItem
-                          key={index}
-                          title={component.title}
-                          icon={component.icon}
-                        >
-                          {component.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
                 {navLinksStatic.map((link, index) => (
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
@@ -203,6 +169,41 @@ export function Navigation() {
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
+                      "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
+                      "hover:before:scale-x-100",
+                      "focus:before:scale-x-100 focus:outline-hidden",
+                      "disabled:pointer-events-none disabled:opacity-50",
+                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
+                      "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
+                      isScrolled
+                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
+                    )}
+                  >
+                    <Link href={"/#pricing"}>Pricing</Link>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-4">
+                    <h6 className="pl-2.5 font-semibold uppercase text-sm text-primary">
+                      Our Programs
+                    </h6>
+                    <ul className="mt-2.5 grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {programs.map((component, index) => (
+                        <ListItem
+                          key={index}
+                          title={component.title}
+                          icon={component.icon}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>

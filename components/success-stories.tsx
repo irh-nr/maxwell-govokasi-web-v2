@@ -50,7 +50,7 @@ const testimonials = [
 
 const categories = ["All", "Leadership", "Placement", "Mentoring"];
 
-export function LeadershipJourneys() {
+export function SuccessStories() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState("All");
   const [filteredTestimonials, setFilteredTestimonials] =
@@ -97,14 +97,14 @@ export function LeadershipJourneys() {
 
   return (
     <section
-      id="leadership-journeys"
+      id="success-stories"
       className="py-24 px-4 bg-linear-to-b from-white to-muted"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Leadership Journeys
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+            Real Impact
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Real transformations from alumni who completed the Maxwell

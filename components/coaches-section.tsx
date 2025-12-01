@@ -94,7 +94,7 @@ export function CoachesSection() {
   return (
     <section
       id="coaches"
-      className="py-20 px-4 bg-linear-to-b from-white to-muted"
+      className="py-24 px-4 bg-linear-to-b from-white to-muted"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
