@@ -6,15 +6,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Users,
-  Target,
-  Briefcase,
-  Award,
-  Zap,
-  BookOpen,
-  LucideIcon,
-} from "lucide-react";
+import { Briefcase, Award, ArrowRight, LucideIcon } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -45,37 +37,24 @@ export function Navigation() {
 
   const programs = [
     {
-      title: "Executive Mentorship",
-      icon: Users,
-      description: "One-on-one coaching with C-suite executives",
-    },
-    {
-      title: "Corporate Simulation Project",
-      level: "Intermediate",
-      duration: "8 weeks",
-      format: "Online",
-      icon: Briefcase,
-      description: "Real-world project experience with live feedback",
-    },
-    {
-      title: "Interview Mastery",
-      icon: Target,
-      description: "Technical and behavioral interview preparation",
-    },
-    {
-      title: "Leadership Accelerator",
-      icon: Zap,
-      description: "Advanced leadership skills and strategic thinking",
-    },
-    {
-      title: "Placement Boot Camp",
+      title: "Basic Foundation",
+      level: "Beginner",
+      duration: "7 Months",
+      format: "Hybrid",
       icon: Award,
-      description: "Intensive preparation for corporate placement",
+      description: "Essential program for entry-level professionals",
+      packages: ["-", "-", "-", "-", "-"],
+      price: "7M",
     },
     {
-      title: "Industry Specialization",
-      icon: BookOpen,
-      description: "Deep dive into specific industry expertise",
+      title: "Advanced Executive",
+      level: "Intermediate",
+      duration: "42 Months",
+      format: "Hybrid",
+      icon: Briefcase,
+      description: "Comprehensive program for ambitious leaders",
+      packages: ["-", "-", "-", "-", "-"],
+      price: "42M",
     },
   ];
 
@@ -188,9 +167,6 @@ export function Navigation() {
                     <Link href={"/#pricing"}>Pricing</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="p-4">
-                    <h6 className="pl-2.5 font-semibold uppercase text-sm text-primary">
-                      Our Programs
-                    </h6>
                     <ul className="mt-2.5 grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {programs.map((component, index) => (
                         <ListItem
@@ -246,12 +222,6 @@ export function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 animate-fade-in animate-accordion-down bg-white rounded-lg">
             <div className="flex flex-col gap-3 p-4">
-              <Link
-                href={"/#programs"}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
-              >
-                Programs
-              </Link>
               {navLinksStatic.map((link, index) => (
                 <Link
                   key={index}
@@ -264,6 +234,12 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
+              <Link
+                href={"/#pricing"}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
+              >
+                Pricing
+              </Link>
               <div className="flex flex-col gap-2 pt-2 border-t">
                 <div className="flex flex-col gap-2 rounded-lg"></div>
                 <button className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
@@ -294,6 +270,7 @@ const ListItem = React.forwardRef<
       <NavigationMenuLink asChild>
         <a
           ref={ref}
+          href="/#pricing"
           className={cn(
             "block select-none rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
@@ -302,11 +279,14 @@ const ListItem = React.forwardRef<
         >
           <div className="font-semibold tracking-tight leading-none flex items-center gap-2">
             <Icon className="h-5 w-5" />
-            {title}
+            <span className="text-primary">{title}</span>
           </div>
           <p className="mt-2 line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
+          <span className="flex gap-2 mt-4">
+            Learn More <ArrowRight />
+          </span>
         </a>
       </NavigationMenuLink>
     </li>
