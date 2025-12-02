@@ -31,7 +31,7 @@ export function Navigation() {
   const navLinksStatic = [
     { name: "About", href: "/#about" },
     { name: "How It Works", href: "/#how-it-works" },
-    { name: "Curriculum", href: "/#curriculum" },
+    //{ name: "Curriculum", href: "/#curriculum" },
     { name: "Success Stories", href: "/#success-stories" },
   ];
 
@@ -149,7 +149,7 @@ export function Navigation() {
                   </NavigationMenuItem>
                 ))}
 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="hidden">
                   <NavigationMenuTrigger
                     className={cn(
                       "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
@@ -236,7 +236,7 @@ export function Navigation() {
               ))}
               <Link
                 href={"/#pricing"}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 hidden"
               >
                 Pricing
               </Link>

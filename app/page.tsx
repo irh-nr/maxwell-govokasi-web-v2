@@ -18,9 +18,7 @@ export default function Home() {
       <About />
       <TimelineSection />
       <ValueProposition />
-      <CurriculumOverview />
       <SuccessStories />
-      <PackagesSection />
       <CoachesSection />
       <CtaBanner />
       <Footer />
