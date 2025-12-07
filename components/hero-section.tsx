@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const heroSlides = [
@@ -12,6 +13,7 @@ const heroSlides = [
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     cta: "Start Your Journey",
+    photos: "/photos/25060.jpg",
   },
   {
     headline: "Build the Corporate Future With Proven Talent",
@@ -20,20 +22,23 @@ const heroSlides = [
     backgroundClass:
       "bg-gradient-to-br from-secondary via-primary/70 to-primary",
     cta: "Find Top Talent",
+    photos: "/photos/13391.jpg",
   },
   {
     headline: "Accelerate Growth Through Mentorship & Placement",
     subheadline: "Real projects, real coaching, real opportunities await",
     backgroundClass:
-      "bg-gradient-to-br from-primary/90 via-secondary to-primary",
+      "bg-gradient-to-br from-primary/70 via-secondary to-primary",
     cta: "Explore Programs",
+    photos: "/photos/3067.jpg",
   },
   {
     headline: "Empowering Talent, Empowering Companies",
     subheadline: "Together we create meaningful career transformations",
     backgroundClass:
-      "bg-gradient-to-br from-secondary/95 via-primary to-secondary",
+      "bg-gradient-to-br from-secondary/85 via-primary to-secondary",
     cta: "Get Started",
+    photos: "/photos/13391.jpg",
   },
 ];
 
@@ -66,12 +71,15 @@ export function HeroSection() {
   return (
     <section className="relative w-full h-screen pt-20 overflow-hidden">
       {/* Background */}
-      <div
-        className={cn(
-          "absolute inset-0 transition-all duration-1000 ease-out",
-          slide.backgroundClass
-        )}
-      />
+      <div>
+        <div
+          className={cn(
+            "absolute inset-0 transition-all duration-1000 ease-out z-10",
+            slide.backgroundClass
+          )}
+        />
+        <Image src={slide.photos} alt="" fill className="object-cover" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
