@@ -8,40 +8,40 @@ import Link from "next/link";
 
 const testimonials = [
   {
-    name: "Yosephine Andara",
-    position: "Business Analyst",
-    company: "Telkom",
-    logo: "TLK",
-    quote:
-      "Maxwell Leadership helped transform my confidence and sharpen my communication as a future leader.",
-    image: "/professional-woman-business.jpg",
-  },
-  {
-    name: "Rizky Pratama",
-    position: "HR Executive",
-    company: "Bank BCA",
+    name: "Sianne Tania",
+    position: "Service Quality Staff",
+    company: "PT Bank Central Asia",
     logo: "BCA",
     quote:
-      "Through mentorship and real corporate simulation, I landed my first corporate role faster than I imagined.",
-    image: "/professional-man-corporate.jpg",
-  },
-  {
-    name: "Nadia Putri",
-    position: "Product Manager",
-    company: "Gojek",
-    logo: "GJK",
-    quote:
       "The leadership mindset I gained changed the direction of my life and career.",
-    image: "/professional-woman-tech.jpg",
+    image: "/success-stories/Sianne.jpeg",
   },
   {
-    name: "Ahmad Santoso",
-    position: "Senior Consultant",
-    company: "Accenture",
-    logo: "ACC",
+    name: "Intan Annur",
+    position: "Content Creator",
+    company: "Elshe Skin",
+    logo: "ELS",
+    quote:
+      "Maxwell Leadership helped transform my confidence and sharpen my communication as a future leader.",
+    image: "/success-stories/Intan-Annur.jpeg",
+  },
+  {
+    name: "Jonathan Farellius Chandra",
+    position: "Social Media Officer",
+    company: "Provaliant",
+    logo: "PRV",
+    quote:
+      "Through mentorship and real corporate simulation, I landed my first corporate role faster than I imagined.",
+    image: "/success-stories/Jonathan.jpeg",
+  },
+  {
+    name: "Afsya Nabilla",
+    position: "Business Development Representative",
+    company: "Mekari Jurnal",
+    logo: "MKR",
     quote:
       "The mentorship program accelerated my growth beyond what I thought possible.",
-    image: "/professional-man-consultant.jpg",
+    image: "/success-stories/Afsya.jpeg",
   },
 ];
 

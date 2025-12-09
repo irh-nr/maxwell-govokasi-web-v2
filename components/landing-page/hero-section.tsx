@@ -32,7 +32,7 @@ const heroSlides = [
     subheadline: "Real projects, real coaching, real opportunities await",
     backgroundClass:
       "bg-gradient-to-br from-primary/70 via-secondary to-primary",
-    href: "/#pricing",
+    href: "/talent",
     cta: "Explore Programs",
     photos: "/photos/3067.jpg",
   },

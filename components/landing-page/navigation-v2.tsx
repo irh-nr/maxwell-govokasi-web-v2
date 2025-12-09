@@ -149,13 +149,13 @@ export function Navigation() {
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <a
-                            className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
+                            className="bg-gradient-to-br from-primary via-primary/80 to-secondary flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
                             href="/"
                           >
-                            <div className="mb-2 text-lg text-primary font-medium sm:mt-4">
+                            <div className="mb-2 text-lg text-white font-medium sm:mt-4">
                               Maxwell x GOVOKASi
                             </div>
-                            <p className="text-muted-foreground text-sm leading-tight">
+                            <p className="text-white text-sm leading-tight">
                               People Career Solution.
                             </p>
                           </a>
