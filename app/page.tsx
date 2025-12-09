@@ -1,14 +1,14 @@
 "use client";
 
-import { HeroSection } from "@/components/hero-section";
-import { ValueProposition } from "@/components/value-proposition";
-import { CoachesSection } from "@/components/coaches-section";
-import { TimelineSection } from "@/components/timeline-section";
-import { SuccessStories } from "@/components/success-stories";
-import { CtaBanner } from "@/components/cta-banner";
-import { Footer } from "@/components/footer";
-import About from "@/components/about";
-import { FaqSection } from "@/components/faq-section";
+import { HeroSection } from "@/components/landing-page/hero-section";
+import { ValueProposition } from "@/components/landing-page/value-proposition";
+import { CoachesSection } from "@/components/landing-page/coaches-section";
+import { TimelineSection } from "@/components/landing-page/timeline-section";
+import { SuccessStories } from "@/components/landing-page/success-stories";
+import { CtaBanner } from "@/components/landing-page/cta-banner";
+import { Footer } from "@/components/landing-page/footer";
+import About from "@/components/landing-page/about";
+import { FaqSection } from "@/components/landing-page/faq-section";
 
 export default function Home() {
   return (

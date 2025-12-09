@@ -198,18 +198,14 @@ export function Navigation() {
                   <NavigationMenuContent className="p-4">
                     <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       <ListItem
-                        href="/companies/#company-partner"
-                        title="Leading Company Partner"
+                        href="/about-us/#maxwell"
+                        title="About Maxwell Leadership"
                       >
-                        Re-usable components built using Radix UI and Tailwind
-                        CSS.
-                      </ListItem>
-                      <ListItem href="/#how-it-works" title="How It Works">
                         How to install dependencies and structure your app.
                       </ListItem>
                       <ListItem
-                        href="/#success-stories"
-                        title="Success Stories"
+                        href="/about-us/#govokasi"
+                        title="About GOVOKASi"
                       >
                         Styles for headings, paragraphs, lists...etc
                       </ListItem>
