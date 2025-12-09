@@ -1,4 +1,5 @@
 import { Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const coaches = [
@@ -200,9 +201,11 @@ export function CoachesSection() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-all">
-            View All Coaches
-          </button>
+          <Link href={"/coaches"}>
+            <button className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-all">
+              View All Coaches
+            </button>
+          </Link>
         </div>
       </div>
     </section>

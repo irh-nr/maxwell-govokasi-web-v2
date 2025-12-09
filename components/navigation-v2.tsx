@@ -29,10 +29,15 @@ export function Navigation() {
   }, []);
 
   const navLinksStatic = [
-    { name: "About", href: "/#about" },
-    { name: "How It Works", href: "/#how-it-works" },
     //{ name: "Curriculum", href: "/#curriculum" },
-    { name: "Success Stories", href: "/#success-stories" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
+  const navLinksMobile = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    //{ name: "Curriculum", href: "/#curriculum" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   const programs = [
@@ -122,6 +127,132 @@ export function Navigation() {
           <div className="hidden md:flex items-center">
             <NavigationMenu className="z-20">
               <NavigationMenuList className="space-x-8">
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
+                      "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
+                      "hover:before:scale-x-100",
+                      "focus:before:scale-x-100 focus:outline-hidden",
+                      "disabled:pointer-events-none disabled:opacity-50",
+                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
+                      "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
+                      isScrolled
+                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
+                    )}
+                  >
+                    <Link href={"/"}>Home</Link>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-4">
+                    <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                      <li className="row-span-3">
+                        <NavigationMenuLink asChild>
+                          <a
+                            className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
+                            href="/"
+                          >
+                            <div className="mb-2 text-lg text-primary font-medium sm:mt-4">
+                              Maxwell x GOVOKASi
+                            </div>
+                            <p className="text-muted-foreground text-sm leading-tight">
+                              People Career Solution.
+                            </p>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                      <ListItem href="/#about" title="Program Pathways">
+                        Re-usable components built using Radix UI and Tailwind
+                        CSS.
+                      </ListItem>
+                      <ListItem href="/#how-it-works" title="How It Works">
+                        How to install dependencies and structure your app.
+                      </ListItem>
+                      <ListItem
+                        href="/#success-stories"
+                        title="Success Stories"
+                      >
+                        Styles for headings, paragraphs, lists...etc
+                      </ListItem>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
+                      "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
+                      "hover:before:scale-x-100",
+                      "focus:before:scale-x-100 focus:outline-hidden",
+                      "disabled:pointer-events-none disabled:opacity-50",
+                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
+                      "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
+                      isScrolled
+                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
+                    )}
+                  >
+                    <Link href={"/about-us"}>About Us</Link>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-4">
+                    <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      <ListItem
+                        href="/companies/#company-partner"
+                        title="Leading Company Partner"
+                      >
+                        Re-usable components built using Radix UI and Tailwind
+                        CSS.
+                      </ListItem>
+                      <ListItem href="/#how-it-works" title="How It Works">
+                        How to install dependencies and structure your app.
+                      </ListItem>
+                      <ListItem
+                        href="/#success-stories"
+                        title="Success Stories"
+                      >
+                        Styles for headings, paragraphs, lists...etc
+                      </ListItem>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
+                      "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
+                      "hover:before:scale-x-100",
+                      "focus:before:scale-x-100 focus:outline-hidden",
+                      "disabled:pointer-events-none disabled:opacity-50",
+                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
+                      "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
+                      isScrolled
+                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
+                    )}
+                  >
+                    Explore
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-4">
+                    <ul className="grid gap-2 sm:w-[400px] md:w-[400px] md:grid-row-3">
+                      <ListItem href="/talent" title="Explore Talent Path">
+                        Re-usable components built using Radix UI and Tailwind
+                        CSS.
+                      </ListItem>
+                      <ListItem
+                        href="/companies"
+                        title="Explore Company Solution"
+                      >
+                        How to install dependencies and structure your app.
+                      </ListItem>
+                      <ListItem href="/coaches" title="Explore All Coaches">
+                        How to install dependencies and structure your app.
+                      </ListItem>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
                 {navLinksStatic.map((link, index) => (
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
@@ -148,38 +279,6 @@ export function Navigation() {
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
-
-                <NavigationMenuItem className="hidden">
-                  <NavigationMenuTrigger
-                    className={cn(
-                      "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
-                      "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
-                      "hover:before:scale-x-100",
-                      "focus:before:scale-x-100 focus:outline-hidden",
-                      "disabled:pointer-events-none disabled:opacity-50",
-                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
-                      "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
-                      isScrolled
-                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
-                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
-                    )}
-                  >
-                    <Link href={"/#pricing"}>Pricing</Link>
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="p-4">
-                    <ul className="mt-2.5 grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {programs.map((component, index) => (
-                        <ListItem
-                          key={index}
-                          title={component.title}
-                          icon={component.icon}
-                        >
-                          {component.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -222,7 +321,7 @@ export function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 animate-fade-in animate-accordion-down bg-white rounded-lg">
             <div className="flex flex-col gap-3 p-4">
-              {navLinksStatic.map((link, index) => (
+              {navLinksMobile.map((link, index) => (
                 <Link
                   key={index}
                   href={link.href}
@@ -261,35 +360,22 @@ export function Navigation() {
   );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a"> & { icon: LucideIcon }
->(({ className, title, children, icon: Icon, ...props }, ref) => {
+function ListItem({
+  title,
+  children,
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
   return (
-    <li>
+    <li {...props}>
       <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          href="/#pricing"
-          className={cn(
-            "block select-none rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="font-semibold tracking-tight leading-none flex items-center gap-2">
-            <Icon className="h-5 w-5" />
-            <span className="text-primary">{title}</span>
-          </div>
-          <p className="mt-2 line-clamp-2 text-sm leading-snug text-muted-foreground">
+        <Link href={href}>
+          <div className="text-sm leading-none font-medium">{title}</div>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
           </p>
-          <span className="flex gap-2 mt-4">
-            Learn More <ArrowRight />
-          </span>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
-});
-ListItem.displayName = "ListItem";
+}

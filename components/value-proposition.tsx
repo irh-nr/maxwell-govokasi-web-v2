@@ -7,6 +7,7 @@ import {
   Building2,
   Search,
 } from "lucide-react";
+import Link from "next/link";
 
 export function ValueProposition() {
   return (
@@ -78,14 +79,15 @@ export function ValueProposition() {
                 </div>
               </li>
             </ul>
-
-            <button className="w-full px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group">
-              Explore Talent Path
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </button>
+            <Link href={"/talent"}>
+              <button className="w-full px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group">
+                Explore Talent Path
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </button>
+            </Link>
           </div>
 
           {/* Company Card */}
@@ -143,14 +145,15 @@ export function ValueProposition() {
                 </div>
               </li>
             </ul>
-
-            <button className="w-full px-6 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/90 transition-all flex items-center justify-center gap-2 group">
-              Explore Company Solutions
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </button>
+            <Link href={"/companies"}>
+              <button className="w-full px-6 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/90 transition-all flex items-center justify-center gap-2 group">
+                Explore Company Solutions
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const heroSlides = [
   {
@@ -12,6 +13,7 @@ const heroSlides = [
       "Learn from corporate mentors and accelerate your professional growth",
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
+    href: "/talent",
     cta: "Start Your Journey",
     photos: "/photos/25060.jpg",
   },
@@ -21,6 +23,7 @@ const heroSlides = [
       "Connect with exceptional young professionals ready for impact",
     backgroundClass:
       "bg-gradient-to-br from-secondary via-primary/70 to-primary",
+    href: "/companies",
     cta: "Find Top Talent",
     photos: "/photos/13391.jpg",
   },
@@ -29,6 +32,7 @@ const heroSlides = [
     subheadline: "Real projects, real coaching, real opportunities await",
     backgroundClass:
       "bg-gradient-to-br from-primary/70 via-secondary to-primary",
+    href: "/#pricing",
     cta: "Explore Programs",
     photos: "/photos/3067.jpg",
   },
@@ -37,6 +41,7 @@ const heroSlides = [
     subheadline: "Together we create meaningful career transformations",
     backgroundClass:
       "bg-gradient-to-br from-secondary/85 via-primary to-secondary",
+    href: "/#cta",
     cta: "Get Started",
     photos: "/photos/13391.jpg",
   },
@@ -78,7 +83,12 @@ export function HeroSection() {
             slide.backgroundClass
           )}
         />
-        <Image src={slide.photos} alt="" fill className="object-cover" />
+        <Image
+          src={slide.photos}
+          alt=""
+          fill
+          className="object-cover ease-in-out"
+        />
       </div>
 
       {/* Content */}
@@ -92,7 +102,7 @@ export function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
-              {slide.cta}
+              <Link href={slide.href}>{slide.cta}</Link>
             </button>
             <button className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all">
               Learn More

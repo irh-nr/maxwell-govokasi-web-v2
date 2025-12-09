@@ -1,5 +1,13 @@
-import { Search, Bolt, TrendingUp, ChevronRight } from "lucide-react";
+import {
+  Search,
+  Bolt,
+  TrendingUp,
+  ChevronRight,
+  ArrowRight,
+} from "lucide-react";
 import React from "react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const timelineSteps = [
   {
@@ -81,6 +89,24 @@ export function TimelineSection() {
               </React.Fragment>
             );
           })}
+        </div>
+        <div className="text-center mt-16 pt-12 border-t border-border/50">
+          <p className="text-lg text-foreground font-medium mb-4">
+            Explore further more.
+          </p>
+          <Button
+            size={"lg"}
+            className="border-primary border-2 bg-transparent hover:bg-primary/90 text-primary hover:text-white group hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+            asChild
+          >
+            <Link href={"/talent"}>
+              Learn More{" "}
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

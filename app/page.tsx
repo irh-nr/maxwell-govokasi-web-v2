@@ -8,6 +8,7 @@ import { SuccessStories } from "@/components/success-stories";
 import { CtaBanner } from "@/components/cta-banner";
 import { Footer } from "@/components/footer";
 import About from "@/components/about";
+import { FaqSection } from "@/components/faq-section";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <SuccessStories />
       <CoachesSection />
       <CtaBanner />
+      <FaqSection />
       <Footer />
     </main>
   );

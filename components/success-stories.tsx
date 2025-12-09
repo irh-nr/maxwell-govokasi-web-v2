@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const testimonials = [
   {
@@ -210,22 +211,16 @@ export function SuccessStories() {
 
         {/* CTA Section */}
         <div className="text-center mt-16 pt-12 border-t border-border/50">
-          <p className="text-xl text-foreground font-medium mb-6">
+          <p className="text-lg text-foreground font-medium mb-4">
             Your journey starts today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white"
+              asChild
             >
-              Join Maxwell Leadership Program
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary/5 bg-transparent"
-            >
-              View All Success Stories
+              <Link href={"/form/talent"}>Join Maxwell Leadership Program</Link>
             </Button>
           </div>
         </div>
