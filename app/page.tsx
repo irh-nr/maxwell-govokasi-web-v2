@@ -6,7 +6,7 @@ import { CoachesSection } from "@/components/landing-page/coaches-section";
 import { TimelineSection } from "@/components/landing-page/timeline-section";
 import { SuccessStories } from "@/components/landing-page/success-stories";
 import { CtaBanner } from "@/components/landing-page/cta-banner";
-import { Footer } from "@/components/landing-page/footer";
+
 import About from "@/components/landing-page/about";
 import { FaqSection } from "@/components/landing-page/faq-section";
 
@@ -21,7 +21,6 @@ export default function Home() {
       <CoachesSection />
       <CtaBanner />
       <FaqSection />
-      <Footer />
     </main>
   );
 }

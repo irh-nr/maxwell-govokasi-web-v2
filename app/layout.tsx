@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Navigation } from "@/components/landing-page/navigation-v2";
+import { Footer } from "@/components/landing-page/footer";
 import "./globals.css";
 
 const _Work_Sans = Work_Sans({ subsets: ["latin"] });
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   );
