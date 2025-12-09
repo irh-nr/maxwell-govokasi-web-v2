@@ -140,7 +140,7 @@ export function CoachesSection() {
                   key={index}
                   className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4"
                 >
-                  <div className="flex flex-col gap-4 card-depth group bg-white rounded-xl border border-border hover:border-primary/30 transition-all h-full">
+                  <div className="flex flex-col gap-4 card-depth-v2 hover:shadow-2xl group bg-white rounded-xl border border-border hover:border-primary/30 transition-all h-full">
                     {/* Picture */}
                     <div className="w-full h-60 bg-linear-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-xl">
                       {coach.name.charAt(0)}

@@ -179,7 +179,7 @@ export function SuccessStories() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white"
+              className="bg-primary hover:bg-primary/90 text-white rounded-full"
               asChild
             >
               <Link href={"/form/talent"}>Join Maxwell Leadership Program</Link>

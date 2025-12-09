@@ -197,4 +197,17 @@
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(49, 0, 111, 0.15);
   }
+
+  .card-depth-v2 {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .card-depth-v2:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 20px 40px rgba(49, 0, 111, 0.15);
+  }
+}
+
+button {
+  @apply rounded-full;
 }
