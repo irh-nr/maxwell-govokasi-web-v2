@@ -199,14 +199,6 @@ export function CoachesSection() {
             ))}
           </div>
         </div>
-
-        <div className="text-center mt-12">
-          <Link href={"/coaches"}>
-            <button className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-all">
-              View All Coaches
-            </button>
-          </Link>
-        </div>
       </div>
     </section>
   );

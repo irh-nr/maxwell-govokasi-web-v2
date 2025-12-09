@@ -14,7 +14,6 @@ const testimonials = [
     logo: "TLK",
     quote:
       "Maxwell Leadership helped transform my confidence and sharpen my communication as a future leader.",
-    category: "leadership",
     image: "/professional-woman-business.jpg",
   },
   {
@@ -24,7 +23,6 @@ const testimonials = [
     logo: "BCA",
     quote:
       "Through mentorship and real corporate simulation, I landed my first corporate role faster than I imagined.",
-    category: "placement",
     image: "/professional-man-corporate.jpg",
   },
   {
@@ -34,7 +32,6 @@ const testimonials = [
     logo: "GJK",
     quote:
       "The leadership mindset I gained changed the direction of my life and career.",
-    category: "leadership",
     image: "/professional-woman-tech.jpg",
   },
   {
@@ -44,12 +41,9 @@ const testimonials = [
     logo: "ACC",
     quote:
       "The mentorship program accelerated my growth beyond what I thought possible.",
-    category: "mentoring",
     image: "/professional-man-consultant.jpg",
   },
 ];
-
-const categories = ["All", "Leadership", "Placement", "Mentoring"];
 
 export function SuccessStories() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -57,19 +51,6 @@ export function SuccessStories() {
   const [filteredTestimonials, setFilteredTestimonials] =
     useState(testimonials);
   const [isAutoplay, setIsAutoplay] = useState(true);
-
-  useEffect(() => {
-    if (activeCategory === "All") {
-      setFilteredTestimonials(testimonials);
-    } else {
-      setFilteredTestimonials(
-        testimonials.filter(
-          (t) => t.category.toLowerCase() === activeCategory.toLowerCase()
-        )
-      );
-    }
-    setActiveIndex(0);
-  }, [activeCategory]);
 
   useEffect(() => {
     if (!isAutoplay || filteredTestimonials.length === 0) return;
@@ -113,104 +94,85 @@ export function SuccessStories() {
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => {
-                setActiveCategory(category);
-                setIsAutoplay(true);
-              }}
-              className={cn(
-                "px-6 py-2 rounded-full font-medium transition-all",
-                activeCategory === category
-                  ? "bg-primary text-white shadow-lg"
-                  : "bg-white border border-border text-foreground hover:border-primary"
-              )}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        {/* Carousel */}
-        {currentTestimonial && (
-          <div className="relative">
-            <div className="card-depth rounded-2xl overflow-hidden bg-white border border-border p-4">
-              <div className="grid md:grid-cols-2 gap-0">
-                {/* Image Side */}
-                <div className="relative bg-linear-to-br from-primary/10 to-secondary/10 min-h-96 md:min-h-full flex items-center justify-center rounded-lg p-4">
-                  <img
-                    src={currentTestimonial.image || "/placeholder.svg"}
-                    alt={currentTestimonial.name}
-                    className="w-full h-full rounded-xl object-cover shadow-lg"
-                  />
-                </div>
-
-                {/* Content Side */}
-                <div className="p-10 md:p-12 flex flex-col justify-between">
-                  {/* Company Logo */}
-                  <div className="w-16 h-16 bg-linear-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg mb-6 shadow-md">
-                    {currentTestimonial.logo}
+        <div>
+          {/* Carousel */}
+          {currentTestimonial && (
+            <div className="relative">
+              <div className="card-depth rounded-2xl overflow-hidden bg-white border border-border p-4">
+                <div className="grid md:grid-cols-2 gap-0">
+                  {/* Image Side */}
+                  <div className="relative bg-linear-to-br from-primary/10 to-secondary/10 min-h-96 md:min-h-full flex items-center justify-center rounded-lg p-4">
+                    <img
+                      src={currentTestimonial.image || "/placeholder.svg"}
+                      alt={currentTestimonial.name}
+                      className="w-full h-full rounded-xl object-cover shadow-lg"
+                    />
                   </div>
 
-                  {/* Quote */}
-                  <div className="mb-8">
-                    <p className="text-2xl md:text-3xl text-foreground font-light leading-relaxed mb-6">
-                      "{currentTestimonial.quote}"
-                    </p>
-                  </div>
+                  {/* Content Side */}
+                  <div className="p-10 md:p-12 flex flex-col justify-between">
+                    {/* Company Logo */}
+                    <div className="w-16 h-16 bg-linear-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg mb-6 shadow-md">
+                      {currentTestimonial.logo}
+                    </div>
 
-                  {/* Author Info */}
-                  <div>
-                    <p className="text-xl font-bold text-foreground">
-                      {currentTestimonial.name}
-                    </p>
-                    <p className="text-base text-muted-foreground mb-4">
-                      {currentTestimonial.position} at{" "}
-                      {currentTestimonial.company}
-                    </p>
+                    {/* Quote */}
+                    <div className="mb-8">
+                      <p className="text-2xl md:text-3xl text-foreground font-light leading-relaxed mb-6">
+                        "{currentTestimonial.quote}"
+                      </p>
+                    </div>
 
-                    {/* Slide Indicators */}
-                    <div className="flex gap-2 mt-6">
-                      {filteredTestimonials.map((_, index) => (
-                        <div
-                          key={index}
-                          className={cn(
-                            "h-2 rounded-full transition-all",
-                            index === activeIndex
-                              ? "w-8 bg-primary"
-                              : "w-2 bg-border"
-                          )}
-                        />
-                      ))}
+                    {/* Author Info */}
+                    <div>
+                      <p className="text-xl font-bold text-foreground">
+                        {currentTestimonial.name}
+                      </p>
+                      <p className="text-base text-muted-foreground mb-4">
+                        {currentTestimonial.position} at{" "}
+                        {currentTestimonial.company}
+                      </p>
+
+                      {/* Slide Indicators */}
+                      <div className="flex gap-2 mt-6">
+                        {filteredTestimonials.map((_, index) => (
+                          <div
+                            key={index}
+                            className={cn(
+                              "h-2 rounded-full transition-all",
+                              index === activeIndex
+                                ? "w-8 bg-primary"
+                                : "w-2 bg-border"
+                            )}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-primary hover:text-white transition-all md:-left-16"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-primary hover:text-white transition-all md:-right-16"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
-        )}
+              {/* Navigation Arrows */}
+              <button
+                onClick={goToPrevious}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-primary hover:text-white transition-all md:-left-16"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={goToNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-primary hover:text-white transition-all md:-right-16"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 pt-12 border-t border-border/50">
+        <div className="text-center mt-6 pt-6 border-t border-border/50">
           <p className="text-lg text-foreground font-medium mb-4">
             Your journey starts today.
           </p>
