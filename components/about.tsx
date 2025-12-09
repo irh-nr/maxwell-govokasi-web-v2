@@ -32,8 +32,8 @@ export default function About() {
             Program Pathways
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Tailored development tracks for every career stage lorem ipsum dolor
-            sit amet eta ipsum
+            A structured series of programs to support career growth 
+            and competency development.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function About() {
             return (
               <div
                 key={idx}
-                className="group p-8 bg-white rounded-2xl border border-border/30 hover:border-primary/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px]"
+                className="group p-8 bg-white rounded-[20px] border border-border/30 hover:border-primary/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-y-[-20px]"
               >
                 {/* Icon */}
                 <div className="mb-6 inline-flex p-4 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
