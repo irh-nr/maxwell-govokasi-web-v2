@@ -13,7 +13,8 @@ const heroSlides = [
       "Learn from corporate mentors and accelerate your professional growth",
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
-    href: "/talent",
+    href: "/form/talent",
+    href2: "/talent",
     cta: "Start Your Journey",
     photos: "/photos/25060.jpg",
   },
@@ -23,7 +24,8 @@ const heroSlides = [
       "Connect with exceptional young professionals ready for impact",
     backgroundClass:
       "bg-gradient-to-br from-secondary via-primary/70 to-primary",
-    href: "/companies",
+    href: "/form/companies",
+    href2: "/companies",
     cta: "Find Top Talent",
     photos: "/photos/13391.jpg",
   },
@@ -32,7 +34,8 @@ const heroSlides = [
     subheadline: "Real projects, real coaching, real opportunities await",
     backgroundClass:
       "bg-gradient-to-br from-primary/70 via-secondary to-primary",
-    href: "/talent",
+    href: "/#about",
+    href2: "/talent",
     cta: "Explore Programs",
     photos: "/photos/3067.jpg",
   },
@@ -42,6 +45,7 @@ const heroSlides = [
     backgroundClass:
       "bg-gradient-to-br from-secondary/85 via-primary to-secondary",
     href: "/#cta",
+    href2: "/#about",
     cta: "Get Started",
     photos: "/photos/13391.jpg",
   },
@@ -105,7 +109,7 @@ export function HeroSection() {
               <Link href={slide.href}>{slide.cta}</Link>
             </button>
             <button className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all">
-              Learn More
+              <Link href={slide.href2}>Learn More</Link>
             </button>
           </div>
         </div>

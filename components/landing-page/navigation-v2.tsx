@@ -36,6 +36,8 @@ export function Navigation() {
   const navLinksMobile = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
+    { name: "Explore Talent Path", href: "/talent" },
+    { name: "Explore Company Solutions", href: "/companies" },
     //{ name: "Curriculum", href: "/#curriculum" },
     { name: "Contact Us", href: "/contact" },
   ];

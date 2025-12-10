@@ -1,10 +1,44 @@
-import React from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
+
+const faqData = [
+  {
+    value: "item-1",
+    question: "How do I enroll in a program?",
+    answers: [
+      "You can enroll directly through our website by selecting the learning pathway that matches your goals.",
+      "Once registered, you will receive onboarding guidance and access to your learning dashboard.",
+    ],
+  },
+  {
+    value: "item-2",
+    question: "Is there a fee for joining the program?",
+    answers: [
+      "We offer both free and paid programs depending on the pathway you choose.",
+      "Financial assistance or sponsorship may be available for qualified learners.",
+    ],
+  },
+  {
+    value: "item-3",
+    question: "How does the mentorship or promotion system work?",
+    answers: [
+      "Learners who complete the required modules and assessments may qualify for mentorship sessions with industry professionals.",
+      "Promotion to advanced tracks is based on performance, submissions, and skill competency evaluations.",
+    ],
+  },
+  {
+    value: "item-4",
+    question: "Can I choose my preferred field or specialization?",
+    answers: [
+      "Yes, you are free to choose a specialization that aligns with your interests and career goals.",
+      "Some advanced fields may require completing foundational modules first to ensure readiness.",
+    ],
+  },
+];
 
 export function FaqSection() {
   return (
@@ -17,70 +51,23 @@ export function FaqSection() {
             happy to help!
           </p>
         </div>
+
         <Accordion
           type="single"
           collapsible
           className="w-3/4"
           defaultValue="item-1"
         >
-          <AccordionItem value="item-1">
-            <AccordionTrigger>
-              How quickly can I start using solutions?
-            </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              <p>
-                Our solutions are easy to implement and can be up and running in
-                just a few days, depending on your fleet size and system
-                integration needs.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Is this program paid?</AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              <p>
-                We offer worldwide shipping through trusted courier partners.
-                Standard delivery takes 3-5 business days, while express
-                shipping ensures delivery within 1-2 business days.
-              </p>
-              <p>
-                All orders are carefully packaged and fully insured. Track your
-                shipment in real-time through our dedicated tracking portal.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>
-              How does the promotion system work?
-            </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              <p>
-                We stand behind our products with a comprehensive 30-day return
-                policy. If you&apos;re not completely satisfied, simply return
-                the item in its original condition.
-              </p>
-              <p>
-                Our hassle-free return process includes free return shipping and
-                full refunds processed within 48 hours of receiving the returned
-                item.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-4">
-            <AccordionTrigger>Can I choose a field?</AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              <p>
-                We stand behind our products with a comprehensive 30-day return
-                policy. If you&apos;re not completely satisfied, simply return
-                the item in its original condition.
-              </p>
-              <p>
-                Our hassle-free return process includes free return shipping and
-                full refunds processed within 48 hours of receiving the returned
-                item.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
+          {faqData.map((faq) => (
+            <AccordionItem key={faq.value} value={faq.value}>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent className="flex flex-col text-balance">
+                {faq.answers.map((ans, idx) => (
+                  <p key={idx}>{ans}</p>
+                ))}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
     </div>

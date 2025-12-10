@@ -27,7 +27,7 @@ export default function BannerFull() {
         </p>
         <Button
           size={"lg"}
-          className="border-white px-8! py-6! border-2 bg-white/10 hover:bg-white/20 backdrop-blur-lg text-white hover:shadow-2xl transition-all rounded-full"
+          className="border-white px-8! py-6! border-2 bg-transparent hover:bg-white/10 text-white hover:shadow-2xl transition-all rounded-full"
           asChild
         >
           <Link href={"/form/companies"}>Partner With Us</Link>
