@@ -44,7 +44,7 @@ export default function ValueSection() {
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl mb-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            How Maxwell x Govokasi Solves These Problems
+            How Maxwell x GOVOKASi Solves These Problems
           </h2>
           <p className="text-md">
             We don’t just supply candidates — we deliver{" "}

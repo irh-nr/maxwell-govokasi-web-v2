@@ -9,7 +9,7 @@ import "./globals.css";
 const _Work_Sans = Work_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Maxwell x Govokasi - Career Acceleration Platform",
+  title: "Maxwell x GOVOKASi - Career Acceleration Platform",
   description:
     "Connect young talent with top corporate opportunities and build the corporate future through mentorship, coaching, and placement support.",
   generator: "v0.app",
