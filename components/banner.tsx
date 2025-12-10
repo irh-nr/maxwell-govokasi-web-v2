@@ -2,10 +2,10 @@ export function Banner(props: { title: string }) {
   return (
     <section
       id="banner"
-      className="min-h-96 bg-primary flex justify-center items-center"
+      className="px-4 min-h-96 bg-gradient-to-br from-secondary/85 via-primary to-secondary flex justify-center items-center"
     >
-      <div>
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight text-center">
+      <div className="max-w-4xl mx-auto animate-fade-in">
+        <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight text-center">
           {props.title}
         </h1>
       </div>

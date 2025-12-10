@@ -20,6 +20,7 @@
   --muted: #f4f4f4;
   --muted-foreground: oklch(0.556 0 0);
   /* Updated accent color to Maxwell gold #C3A464 */
+
   --accent: #ededed;
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -59,6 +60,7 @@
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   /* Updated accent color for dark mode to Maxwell gold */
+  --brand-accent: #e1c573;
   --accent: #ededed;
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.396 0.141 25.723);
@@ -210,4 +212,8 @@
 
 button {
   @apply rounded-full;
+}
+
+.text-brand-accent {
+  color: #e1c573;
 }

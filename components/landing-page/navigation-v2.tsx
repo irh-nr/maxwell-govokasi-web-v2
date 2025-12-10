@@ -162,17 +162,19 @@ export function Navigation() {
                         </NavigationMenuLink>
                       </li>
                       <ListItem href="/#about" title="Program Pathways">
-                        Re-usable components built using Radix UI and Tailwind
-                        CSS.
+                        Explore structured learning routes designed to build
+                        skills and guide you toward career readiness.
                       </ListItem>
                       <ListItem href="/#how-it-works" title="How It Works">
-                        How to install dependencies and structure your app.
+                        Understand our step-by-step process for learning, skill
+                        development, and achieving measurable progress.
                       </ListItem>
                       <ListItem
                         href="/#success-stories"
                         title="Success Stories"
                       >
-                        Styles for headings, paragraphs, lists...etc
+                        Discover real experiences and outcomes from individuals
+                        and companies who have grown with our programs.
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
@@ -196,18 +198,21 @@ export function Navigation() {
                     <Link href={"/about-us"}>About Us</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="p-4">
-                    <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    <ul className="grid gap-2 sm:w-[400px]">
                       <ListItem
                         href="/about-us/#maxwell"
                         title="About Maxwell Leadership"
                       >
-                        How to install dependencies and structure your app.
+                        Explore our leadership philosophy, guiding principles,
+                        and commitment to developing future leaders.
                       </ListItem>
                       <ListItem
                         href="/about-us/#govokasi"
                         title="About GOVOKASi"
                       >
-                        Styles for headings, paragraphs, lists...etc
+                        Learn how GOVOKASi empowers talent and organizations
+                        through education, innovation, and strategic
+                        initiatives.
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
@@ -233,17 +238,15 @@ export function Navigation() {
                   <NavigationMenuContent className="p-4">
                     <ul className="grid gap-2 sm:w-[400px] md:w-[400px] md:grid-row-3">
                       <ListItem href="/talent" title="Explore Talent Path">
-                        Re-usable components built using Radix UI and Tailwind
-                        CSS.
+                        Advance your career with expertly crafted learning
+                        programs tailored to real-world industry standards.
                       </ListItem>
                       <ListItem
                         href="/companies"
                         title="Explore Company Solution"
                       >
-                        How to install dependencies and structure your app.
-                      </ListItem>
-                      <ListItem href="/coaches" title="Explore All Coaches">
-                        How to install dependencies and structure your app.
+                        Empower your organization with strategic talent
+                        development and high-impact workforce solutions.
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>

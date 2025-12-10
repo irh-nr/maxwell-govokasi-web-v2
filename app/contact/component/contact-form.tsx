@@ -1,6 +1,6 @@
 export default function ContactForm() {
   return (
-    <section className="py-24 px-4 bg-purple-50">
+    <section className="py-24 px-4 bg-linear-to-b from-white to-muted">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="space-y-4">

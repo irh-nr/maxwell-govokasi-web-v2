@@ -93,7 +93,7 @@ export function TimelineSection() {
           </div>
 
           {/* Photos */}
-          <div className="w-xl justify-between hidden md:flex">
+          <div className="w-xl hidden md:flex">
             <AspectRatio ratio={10 / 11}>
               <Image
                 src={"/photos/2151957110.jpg"}
