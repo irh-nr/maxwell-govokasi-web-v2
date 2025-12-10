@@ -13,8 +13,8 @@ export default function TrustProof() {
   return (
     <section className="py-24 px-4">
       <div className="mx-auto max-w-6xl">
-        <div className="flex justify-end">
-          <div className="mb-6 text-end">
+        <div className="flex justify-center">
+          <div className="mb-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Trusted by Leading Companies Partners
             </h2>
