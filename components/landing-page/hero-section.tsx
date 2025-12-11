@@ -5,11 +5,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Check } from "lucide-react";
 
 const heroSlides = [
   {
-    headline: "Competence changes everything.",
+    headline: "Competence changes everything",
     highlight: {
       word: "Competence",
       className: "text-brand-accent",
@@ -20,29 +19,17 @@ const heroSlides = [
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/#cta",
-    href2: "/talent",
     cta: "Join Us Now",
     photos: "/photos/25060.jpg",
   },
   {
-    headline: "Build your corporate future on competence.",
-    highlight: {
-      word: "competence",
-      className: "text-brand-accent",
-    },
-    subheadline: "Deploy talent who can perform from day one.",
+    headline: "Leaders create leaders",
+    subheadline: "We deliver talent trained to lead with real competence",
     backgroundClass:
-      "bg-gradient-to-br from-secondary via-primary/70 to-primary",
+      "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/form/companies",
-    href2: "/companies",
     cta: "Find Top Talent",
-    photos: "/photos/13391.jpg",
-    list: [
-      "Hits time-to-productivity",
-      "Hits competence readiness",
-      "Strong Logos (logic)",
-      "Clear & trust-building",
-    ],
+    photos: "/photos/25060.jpg",
   },
   {
     headline: "Accelerate Growth Through Mentorship & Placement",
@@ -50,7 +37,6 @@ const heroSlides = [
     backgroundClass:
       "bg-gradient-to-t from-secondary via-primary/70 to-primary",
     href: "/#about",
-    href2: "/talent",
     cta: "Explore Programs",
     photos: "/photos/main-hero-3.jpeg",
   },
@@ -60,7 +46,6 @@ const heroSlides = [
     backgroundClass:
       "bg-gradient-to-br from-secondary/85 via-primary to-secondary",
     href: "/#cta",
-    href2: "/#about",
     cta: "Get Started",
     photos: "/photos/13391.jpg",
   },
@@ -143,12 +128,12 @@ export function HeroSection() {
           <p className="text-xl md:text-2xl text-white/90 mt-6 max-w-2xl mx-auto">
             {slide.subheadline}
           </p>
-          <p className="text-lg md:text-xl text-white/80 mt-4 max-w-2xl mx-auto leading-tight">
+          <p className="text-lg md:text-xl text-white/85 mt-4 max-w-2xl mx-auto leading-tight">
             {slide.paragraph}
           </p>
 
           {/* OPSIONAL LIST */}
-          {slide.list && (
+          {/*{slide.list && (
             <div className="flex justify-center">
               <ul className="text-white/90 text-lg space-y-2 text-left">
                 {slide.list.map((item, i) => (
@@ -159,7 +144,7 @@ export function HeroSection() {
                 ))}
               </ul>
             </div>
-          )}
+          )}*/}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
             <button className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
               <Link href={slide.href}>{slide.cta}</Link>
