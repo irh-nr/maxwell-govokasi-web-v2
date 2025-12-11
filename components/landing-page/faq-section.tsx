@@ -43,8 +43,8 @@ const faqData = [
 export function FaqSection() {
   return (
     <div className="max-w-7xl mx-auto py-10">
-      <div className="p-4 flex justify-between gap-12 items-center">
-        <div>
+      <div className="p-4 flex flex-col justify-between gap-12 items-center">
+        <div className="text-center">
           <h2 className="text-3xl font-bold">Frequently Asked Question</h2>
           <p className="inline-block mt-2">
             Didn’t find an answer to your questions? Contact us, and we’ll be
@@ -52,23 +52,46 @@ export function FaqSection() {
           </p>
         </div>
 
-        <Accordion
-          type="single"
-          collapsible
-          className="w-3/4"
-          defaultValue="item-1"
-        >
-          {faqData.map((faq) => (
-            <AccordionItem key={faq.value} value={faq.value}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent className="flex flex-col text-balance">
-                {faq.answers.map((ans, idx) => (
-                  <p key={idx}>{ans}</p>
-                ))}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="flex flex-col lg:flex-row justify-center items-center">
+          <div className="max-w-2xl flex justify-center items-center">
+            <Accordion
+              type="single"
+              collapsible
+              className="w-3/4"
+              defaultValue="item-1"
+            >
+              {faqData.map((faq) => (
+                <AccordionItem key={faq.value} value={faq.value}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent className="flex flex-col text-balance">
+                    {faq.answers.map((ans, idx) => (
+                      <p key={idx}>{ans}</p>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+          <div className="max-w-2xl flex justify-center items-center">
+            <Accordion
+              type="single"
+              collapsible
+              className="w-3/4"
+              defaultValue="item-1"
+            >
+              {faqData.map((faq) => (
+                <AccordionItem key={faq.value} value={faq.value}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent className="flex flex-col text-balance">
+                    {faq.answers.map((ans, idx) => (
+                      <p key={idx}>{ans}</p>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
       </div>
     </div>
   );

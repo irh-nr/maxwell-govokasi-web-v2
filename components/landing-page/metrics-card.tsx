@@ -16,7 +16,7 @@ export default function MetricsCard() {
             return (
               <div
                 key={idx}
-                className="group p-2 py-8 bg-primary rounded-[20px] border border-border/30 hover:border-primary/50 shadow-sm transition-all card-depth-v2 text-center grid"
+                className="group p-2 py-8 bg-primary rounded-[20px] border border-border/30 hover:border-white/50 shadow-sm transition-all card-depth-v2 text-center grid"
               >
                 {/* Number */}
                 <span className="text-white text-3xl font-bold leading-relaxed">
