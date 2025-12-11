@@ -16,15 +16,21 @@ const heroSlides = [
     subheadline: "We don’t train skills. We build competence.",
     paragraph:
       "Through real work, real coaching, and real accountability. We turn raw potential into industry-ready performers.",
+    boldWords: ["Competence", "industry-ready performers."],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/#cta",
     cta: "Join Us Now",
-    photos: "/photos/25060.jpg",
+    photos: "/photos/main-hero-3.jpeg",
   },
   {
     headline: "Leaders create leaders",
+    highlight: {
+      word: "Leaders",
+      className: "text-brand-accent",
+    },
     subheadline: "We deliver talent trained to lead with real competence",
+    boldWords: ["Competence"],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/companies",
@@ -33,12 +39,16 @@ const heroSlides = [
   },
   {
     headline: "Accelerate Growth Through Mentorship & Placement",
+    highlight: {
+      word: "Accelerate Growth",
+      className: "text-brand-accent",
+    },
     subheadline: "Real projects, real coaching, real opportunities await",
     backgroundClass:
       "bg-gradient-to-t from-secondary via-primary/70 to-primary",
-    href: "/#about",
+    href: "/talent",
     cta: "Explore Programs",
-    photos: "/photos/main-hero-3.jpeg",
+    photos: "/photos/25060.jpg",
   },
 ];
 
@@ -129,10 +139,10 @@ export function HeroSection() {
             {renderHeadline(slide.headline, slide.highlight)}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mt-6 max-w-2xl mx-auto">
-            {slide.subheadline}
+            {boldWords(slide.subheadline, slide.boldWords ?? [])}
           </p>
-          <p className="text-lg md:text-xl text-white/85 mt-4 max-w-2xl mx-auto leading-tight">
-            {slide.paragraph}
+          <p className="text-lg md:text-xl text-white/85 mt-4 max-w-4xl mx-auto leading-tight">
+            {boldWords(slide.paragraph ?? "", slide.boldWords ?? [])}
           </p>
 
           {/* OPSIONAL LIST */}
@@ -191,4 +201,30 @@ export function HeroSection() {
       </div>
     </section>
   );
+}
+
+function boldWords(text: string, words: string[]) {
+  if (!text || !words?.length) return text;
+
+  let result: React.ReactNode[] = [text];
+
+  words.forEach((word) => {
+    result = result.flatMap((segment) => {
+      if (typeof segment !== "string") return segment;
+
+      const parts = segment.split(new RegExp(`(${word})`, "gi"));
+
+      return parts.map((p, i) =>
+        p.toLowerCase() === word.toLowerCase() ? (
+          <strong key={i} className="font-bold">
+            {p}
+          </strong>
+        ) : (
+          p
+        )
+      );
+    });
+  });
+
+  return result;
 }

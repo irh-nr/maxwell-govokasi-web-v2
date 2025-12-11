@@ -57,7 +57,7 @@ export function SuccessStories() {
 
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % filteredTestimonials.length);
-    }, 6000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isAutoplay, filteredTestimonials.length]);
