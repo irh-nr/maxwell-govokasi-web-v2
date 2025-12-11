@@ -11,7 +11,7 @@ export default function CollabSection() {
         </h2>
 
         {/* DESCRIPTION */}
-        <p className="text-muted-foreground leading-relaxed mb-12">
+        <p className="leading-relaxed mb-12">
           Penjelasan mengenai Maxwell dan GOVOKASi kenapa bisa collab. Lorem ipsum 
           dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 

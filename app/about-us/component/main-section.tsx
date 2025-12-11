@@ -9,7 +9,7 @@ export default function MainSection() {
             Background Maxwell x GOVOKASi
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Maxwell x Govokasi was established to contribute to the intellectual
+            Maxwell x GOVOKASi was established to contribute to the intellectual
             advancement of the nation by:
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function MainSection() {
 
           <div>
             <h3 className="text-2xl font-bold mb-4">Maxwell</h3>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="leading-relaxed">
               Penjelasan company profile terkait Maxwell. Lorem ipsum dolor sit
               amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -43,7 +43,7 @@ export default function MainSection() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="order-2 md:order-1">
             <h3 className="text-2xl font-bold mb-4">GOVOKASi</h3>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="leading-relaxed">
               Penjelasan company profile terkait Govokasi. Lorem ipsum dolor sit
               amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim

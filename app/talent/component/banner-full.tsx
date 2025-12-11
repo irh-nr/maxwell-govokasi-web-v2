@@ -11,7 +11,7 @@ export default function BannerFull() {
     >
       {/*BG */}
       <div>
-        <Image src={"/photos/Hero-Talent.jpg"} alt="" fill className="object-cover" />
+        <Image src={"/photos/HeroImgTalent.jpg"} alt="" fill className="object-cover" />
         <div className="bg-gradient-to-br from-secondary via-primary/70 to-primary absolute w-full h-full inset-0" />
       </div>
 

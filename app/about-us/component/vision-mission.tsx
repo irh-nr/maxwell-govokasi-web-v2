@@ -11,7 +11,7 @@ export default function VisionMissionSection() {
           {/* Vision */}
           <div className="flex flex-col items-center text-center px-6">
             {/* PURPLE RECTANGLE */}
-            <div className="bg-[#31006F] p-4 rounded-xl mb-6 flex items-center justify-center">
+            <div className="bg-primary p-4 rounded-xl mb-6 flex items-center justify-center">
               <Image
                 src="/photos/Innovation.png"
                 alt="Vision Icon"
@@ -23,7 +23,7 @@ export default function VisionMissionSection() {
 
             <h3 className="text-2xl font-bold mb-4">Vision</h3>
 
-            <p className="text-muted-foreground leading-relaxed max-w-sm">
+            <p className="leading-relaxed max-w-sm">
               Menempatkan karir Lorem ipsum dolor sit amet, consectetur
               adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -35,7 +35,7 @@ export default function VisionMissionSection() {
           {/* Mission */}
           <div className="flex flex-col items-center text-center px-6">
             {/* PURPLE RECTANGLE */}
-            <div className="bg-[#31006F] p-4 rounded-xl mb-6 flex items-center justify-center">
+            <div className="bg-primary p-4 rounded-xl mb-6 flex items-center justify-center">
               <Image
                 src="/photos/Goal.png"
                 alt="Mission Icon"
@@ -47,7 +47,7 @@ export default function VisionMissionSection() {
 
             <h3 className="text-2xl font-bold mb-4">Mission</h3>
 
-            <p className="text-muted-foreground leading-relaxed max-w-sm">
+            <p className="leading-relaxed max-w-sm">
               Menempatkan karir Lorem ipsum dolor sit amet, consectetur
               adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud

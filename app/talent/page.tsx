@@ -1,11 +1,13 @@
 import BannerFull from "./component/banner-full";
-import MainSection from "./component/main-section";
+import { CtaBanner } from "./component/cta-banner";
+import GovokasiProgramsSection from "./component/govokasi-programs-section";
 
 export default function Talent() {
   return (
     <main className="min-h-screen bg-background">
       <BannerFull />
-      <MainSection />
+      <GovokasiProgramsSection />
+      <CtaBanner />
     </main>
   );
 }
