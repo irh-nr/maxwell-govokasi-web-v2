@@ -1,5 +1,6 @@
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Youtube, Instagram } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -94,24 +95,24 @@ export function Footer() {
                 contact@maxwell-govokasi.com
               </p>
               <div className="flex gap-3">
-                <a
-                  href="#"
+                <Link
+                  href="https://www.linkedin.com/company/govokasi-indonesia/?originalSubdomain=id"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
                 >
                   <Linkedin size={18} />
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="https://www.instagram.com/govokasi/?hl=en"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
                 >
-                  <Twitter size={18} />
-                </a>
-                <a
-                  href="#"
+                  <Instagram size={18} />
+                </Link>
+                <Link
+                  href="https://www.youtube.com/@govokasiindonesia3214"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
                 >
-                  <Mail size={18} />
-                </a>
+                  <Youtube size={18} />
+                </Link>
               </div>
             </div>
           </div>
