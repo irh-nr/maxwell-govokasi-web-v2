@@ -18,7 +18,7 @@ const heroSlides = [
       "Through real work, real coaching, and real accountability. We turn raw potential into industry-ready performers.",
     boldWords: ["Competence", "industry-ready performers."],
     backgroundClass:
-      "bg-gradient-to-br from-primary via-primary/80 to-secondary",
+      "bg-gradient-to-t from-secondary via-primary/70 to-primary",
     href: "/#cta",
     cta: "Join Us Now",
     photos: "/photos/main-hero-3.jpeg",
@@ -45,7 +45,7 @@ const heroSlides = [
     },
     subheadline: "Real projects, real coaching, real opportunities await",
     backgroundClass:
-      "bg-gradient-to-t from-secondary via-primary/70 to-primary",
+      "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/talent",
     cta: "Explore Programs",
     photos: "/photos/25060.jpg",
