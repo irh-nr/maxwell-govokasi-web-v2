@@ -29,7 +29,7 @@ const heroSlides = [
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/companies",
     cta: "Find Top Talent",
-    photos: "/photos/13391.jpg",
+    photos: "/photos/main-hero-2.jpeg",
   },
   {
     headline: "Accelerate Growth Through Mentorship & Placement",
@@ -40,7 +40,10 @@ const heroSlides = [
     cta: "Explore Programs",
     photos: "/photos/main-hero-3.jpeg",
   },
-  {
+];
+
+{
+  /*{ unused slide
     headline: "Empowering Talent, Empowering Companies",
     subheadline: "Together we create meaningful career transformations",
     backgroundClass:
@@ -48,8 +51,8 @@ const heroSlides = [
     href: "/#cta",
     cta: "Get Started",
     photos: "/photos/13391.jpg",
-  },
-];
+  }*/
+}
 
 type HighlightConfig =
   | {
