@@ -137,20 +137,20 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
         <div className="max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
             {renderHeadline(slide.headline, slide.highlight)}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-2 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 mt-6 max-w-2xl mx-auto">
             {slide.subheadline}
           </p>
-          <p className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-tight">
+          <p className="text-lg md:text-xl text-white/80 mt-4 max-w-2xl mx-auto leading-tight">
             {slide.paragraph}
           </p>
 
           {/* OPSIONAL LIST */}
           {slide.list && (
             <div className="flex justify-center">
-              <ul className="text-white/90 text-lg mb-12 space-y-2 text-left">
+              <ul className="text-white/90 text-lg space-y-2 text-left">
                 {slide.list.map((item, i) => (
                   <li key={i} className="flex gap-2">
                     <Check />
@@ -160,7 +160,7 @@ export function HeroSection() {
               </ul>
             </div>
           )}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
             <button className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
               <Link href={slide.href}>{slide.cta}</Link>
             </button>
