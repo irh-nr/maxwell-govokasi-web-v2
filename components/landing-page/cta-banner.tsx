@@ -10,7 +10,7 @@ export function CtaBanner() {
           Ready to build competence that lasts?
         </h2>
         <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
-          Transform your potential into real competence with Maxwell x Govokasi
+          Transform your potential into real competence with Maxwell x GOVOKASi.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="px-10 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105">

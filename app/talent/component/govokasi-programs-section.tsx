@@ -47,11 +47,11 @@ export default function GovokasiProgramsSection() {
   ];
 
   return (
-    <section id="main-section" className="py-24 px-4">
+    <section id="govokasi-programs-section" className="py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Candidates Journey
+            GOVOKASi Programs
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A structured series of programs to support career growth and

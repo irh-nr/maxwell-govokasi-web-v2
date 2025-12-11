@@ -46,7 +46,7 @@ export function TimelineSection() {
                 How It Works
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                A proven methodology for transforming potential into excellence
+                A proven methodology for transforming potential into excellence.
               </p>
             </div>
             {/* Steps */}

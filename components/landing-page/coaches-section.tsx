@@ -104,7 +104,7 @@ export function CoachesSection() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Learn directly from industry leaders and executives who are shaping
-            the future of business
+            the future of business.
           </p>
         </div>
 

@@ -29,7 +29,7 @@ const heroSlides = [
       word: "Leaders",
       className: "text-brand-accent",
     },
-    subheadline: "We deliver talent trained to lead with real competence",
+    subheadline: "We deliver talent trained to lead with real competence.",
     boldWords: ["Competence"],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
@@ -43,7 +43,7 @@ const heroSlides = [
       word: "Accelerate Growth",
       className: "text-brand-accent",
     },
-    subheadline: "Real projects, real coaching, real opportunities await",
+    subheadline: "Real projects, real coaching, real opportunities await.",
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/talent",

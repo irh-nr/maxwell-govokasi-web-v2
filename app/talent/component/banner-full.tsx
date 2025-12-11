@@ -33,7 +33,7 @@ export default function BannerFull() {
           <Link href={"/form/talent"}>Connect With Us</Link>
         </Button>
         <Link
-          href={"#main-section"}
+          href={"#govokasi-programs-section"}
           className="text-white flex items-center justify-center absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-100"
         >
           <ChevronDown size={50} />

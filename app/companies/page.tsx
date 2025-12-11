@@ -1,7 +1,7 @@
 import BannerFull from "./component/banner-full";
 import MainSection from "./component/main-section";
 import ValueSection from "./component/value-section";
-import TrustProof from "./component/trust-proof";
+// import TrustProof from "./component/trust-proof";
 import { CtaBanner } from "./component/cta-banner";
 export default function Contact() {
   return (
@@ -9,7 +9,7 @@ export default function Contact() {
       <BannerFull />
       <MainSection />
       <ValueSection />
-      <TrustProof />
+      {/* <TrustProof /> */}
       <CtaBanner />
     </main>
   );

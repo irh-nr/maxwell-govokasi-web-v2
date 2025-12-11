@@ -10,7 +10,7 @@ export function CtaBanner() {
           Ready to Hire Better Talent, Faster?
         </h2>
         <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
-          Partner with Maxwell x Govokasi and transform your recruitment process
+          Partner with Maxwell x GOVOKASi and transform your recruitment process
           today.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

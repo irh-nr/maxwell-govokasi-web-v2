@@ -22,7 +22,7 @@ export default function BannerFull() {
           <span className="text-brand-accent">Leaders</span>
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-5xl mx-auto">
-          We deliver talent trained to lead with real <b>competence</b>
+          We deliver talent trained to lead with real <b>competence.</b>
         </p>
         <Button
           size={"lg"}
