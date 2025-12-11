@@ -27,7 +27,7 @@ const heroSlides = [
     subheadline: "We deliver talent trained to lead with real competence",
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
-    href: "/form/companies",
+    href: "/companies",
     cta: "Find Top Talent",
     photos: "/photos/25060.jpg",
   },

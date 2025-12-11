@@ -18,12 +18,10 @@ export default function BannerFull() {
       {/*Content*/}
       <div className="mx-auto animate-fade-in relative text-center h-full flex flex-col items-center justify-center z-10">
         <h1 className="max-w-6xl text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight mx-auto">
-          Recruitment & Talent Development Solutions{" "}
-          <span className="text-brand-accent">Ready to Contribute</span>
+          Leaders create leaders
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-5xl mx-auto">
-          We help companies find talent that fits their culture, is eager to
-          learn, and is competent in real projects.
+          We deliver talent trained to lead with real competence
         </p>
         <Button
           size={"lg"}

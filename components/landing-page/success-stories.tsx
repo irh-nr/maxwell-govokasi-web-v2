@@ -14,7 +14,7 @@ const testimonials = [
     logo: "PRV",
     quote:
       "Through mentorship and real corporate simulation, I landed my first corporate role faster than I imagined.",
-    image: "/professional-man-corporate.jpg",
+    image: "/success-stories/jonathan.svg",
   },
   {
     name: "Sianne Tania",
@@ -23,7 +23,7 @@ const testimonials = [
     logo: "BCA",
     quote:
       "The leadership mindset I gained changed the direction of my life and career.",
-    image: "/success-stories/Sianne.jpeg",
+    image: "/success-stories/sianne.svg",
   },
   {
     name: "Afsya Nabilla",
@@ -32,7 +32,7 @@ const testimonials = [
     logo: "MKR",
     quote:
       "The mentorship program accelerated my growth beyond what I thought possible.",
-    image: "/professional-woman-business.jpg",
+    image: "/success-stories/afsya.svg",
   },
   {
     name: "Intan Annur",
@@ -41,7 +41,7 @@ const testimonials = [
     logo: "ELS",
     quote:
       "Maxwell Leadership helped transform my confidence and sharpen my communication as a future leader.",
-    image: "/professional-woman-tech.jpg",
+    image: "/success-stories/intan.svg",
   },
 ];
 
