@@ -86,7 +86,7 @@ export function SuccessStories() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Real Impact
+            Success Stories
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Real transformations from alumni who completed the Maxwell

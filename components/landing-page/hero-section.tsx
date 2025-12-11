@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const heroSlides = [
   {
-    headline: "Competence changes everything",
+    headline: "Competence Changes Everything",
     highlight: {
       word: "Competence",
       className: "text-brand-accent",
@@ -24,7 +24,7 @@ const heroSlides = [
     photos: "/photos/main-hero-3.jpeg",
   },
   {
-    headline: "Leaders create leaders",
+    headline: "Leaders Create Leaders",
     highlight: {
       word: "Leaders",
       className: "text-brand-accent",
