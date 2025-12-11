@@ -24,7 +24,7 @@ export default function CollabSection() {
         {/* IMAGE */}
         <div className="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-lg">
           <Image
-            src="/photos/Maxwell-GOVOKASi.jpg"
+            src="/photos/Maxwell-GOVOKASi.JPG"
             alt="Maxwell x Govokasi collaboration"
             width={1600}
             height={900}

@@ -37,7 +37,7 @@ export default function VisionMissionSection() {
             {/* PURPLE RECTANGLE */}
             <div className="bg-[#31006F] p-4 rounded-xl mb-6 flex items-center justify-center">
               <Image
-                src="/photos/goal.png"
+                src="/photos/Goal.png"
                 alt="Mission Icon"
                 width={40}
                 height={40}

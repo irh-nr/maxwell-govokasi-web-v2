@@ -55,7 +55,7 @@ export default function MainSection() {
           <div className="order-1 md:order-2">
             <div className="w-full h-72 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/photos/Crew-GOVOKASi.jpg"
+                src="/photos/Crew-GOVOKASi.JPG"
                 alt="Govokasi"
                 width={1200}
                 height={800}
