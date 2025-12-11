@@ -18,8 +18,8 @@ export default function BannerFull() {
       {/*Content*/}
       <div className="mx-auto animate-fade-in relative text-center h-full flex flex-col items-center justify-center z-10">
         <h1 className="max-w-6xl text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight mx-auto">
-          <span className="text-brand-accent">Leaders</span> create{" "}
-          <span className="text-brand-accent">leaders</span>
+          <span className="text-brand-accent">Leaders</span> Create{" "}
+          <span className="text-brand-accent">Leaders</span>
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-5xl mx-auto">
           We deliver talent trained to lead with real <b>competence</b>
