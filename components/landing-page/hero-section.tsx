@@ -5,39 +5,54 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Check } from "lucide-react";
 
 const heroSlides = [
   {
-    headline: "Transform Your Career With World-Class Coaching",
-    subheadline:
-      "Learn from corporate mentors and accelerate your professional growth",
+    headline: "Competence changes everything.",
+    highlight: {
+      word: "Competence",
+      className: "text-brand-accent",
+    },
+    subheadline: "We don’t train skills. We build competence.",
+    paragraph:
+      "Through real work, real coaching, and real accountability. We turn raw potential into industry-ready performers.",
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/form/talent",
     href2: "/talent",
-    cta: "Start Your Journey",
+    cta: "Explore Programs",
     photos: "/photos/25060.jpg",
   },
   {
-    headline: "Build the Corporate Future With Proven Talent",
-    subheadline:
-      "Connect with exceptional young professionals ready for impact",
+    headline: "Build your corporate future on competence.",
+    highlight: {
+      word: "competence",
+      className: "text-brand-accent",
+    },
+    subheadline: "Deploy talent who can perform from day one.",
     backgroundClass:
       "bg-gradient-to-br from-secondary via-primary/70 to-primary",
     href: "/form/companies",
     href2: "/companies",
     cta: "Find Top Talent",
     photos: "/photos/13391.jpg",
+    list: [
+      "Hits time-to-productivity",
+      "Hits competence readiness",
+      "Strong Logos (logic)",
+      "Clear & trust-building",
+    ],
   },
   {
     headline: "Accelerate Growth Through Mentorship & Placement",
     subheadline: "Real projects, real coaching, real opportunities await",
     backgroundClass:
-      "bg-gradient-to-br from-primary/70 via-secondary to-primary",
+      "bg-gradient-to-t from-secondary via-primary/70 to-primary",
     href: "/#about",
     href2: "/talent",
     cta: "Explore Programs",
-    photos: "/photos/3067.jpg",
+    photos: "/photos/main-hero-3.jpeg",
   },
   {
     headline: "Empowering Talent, Empowering Companies",
@@ -50,6 +65,14 @@ const heroSlides = [
     photos: "/photos/13391.jpg",
   },
 ];
+
+type HighlightConfig =
+  | {
+      word: string;
+      className: string;
+    }
+  | null
+  | undefined;
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -76,6 +99,22 @@ export function HeroSection() {
   };
 
   const slide = heroSlides[currentSlide];
+  // Fungsi untuk render headline dengan highlight kata tertentu
+  const renderHeadline = (text: string, highlight: HighlightConfig) => {
+    if (!highlight || !highlight.word) return text;
+
+    const parts = text.split(new RegExp(`(${highlight.word})`, "gi"));
+
+    return parts.map((part, idx) =>
+      part.toLowerCase() === highlight.word.toLowerCase() ? (
+        <span key={idx} className={highlight.className}>
+          {part}
+        </span>
+      ) : (
+        <span key={idx}>{part}</span>
+      )
+    );
+  };
 
   return (
     <section className="relative w-full h-screen pt-20 overflow-hidden">
@@ -97,19 +136,33 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+        <div className="max-w-5xl mx-auto animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            {slide.headline}
+            {renderHeadline(slide.headline, slide.highlight)}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 mb-2 max-w-2xl mx-auto">
             {slide.subheadline}
           </p>
+          <p className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-tight">
+            {slide.paragraph}
+          </p>
+
+          {/* OPSIONAL LIST */}
+          {slide.list && (
+            <div className="flex justify-center">
+              <ul className="text-white/90 text-lg mb-12 space-y-2 text-left">
+                {slide.list.map((item, i) => (
+                  <li key={i} className="flex gap-2">
+                    <Check />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
               <Link href={slide.href}>{slide.cta}</Link>
-            </button>
-            <button className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all">
-              <Link href={slide.href2}>Learn More</Link>
             </button>
           </div>
         </div>
