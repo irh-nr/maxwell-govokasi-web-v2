@@ -29,7 +29,7 @@ const heroSlides = [
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/companies",
     cta: "Find Top Talent",
-    photos: "/photos/25060.jpg",
+    photos: "/photos/13391.jpg",
   },
   {
     headline: "Accelerate Growth Through Mentorship & Placement",
