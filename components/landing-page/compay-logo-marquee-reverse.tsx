@@ -1,23 +1,26 @@
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 
-export default function CompanyMarquee() {
+export default function CompanyMarqueeReverse() {
   const basePath = "/company-logo";
   const companyFiles = [
-    "dni.jpeg",
-    "elshe.jpeg",
-    "infia.jpeg",
     "mursmedic.jpeg",
     "nph.jpeg",
+    "Outsystems.png",
+    "Petra Penida.png",
+    "Provaliant.png",
+    "Prudential.png",
+    "PTWirataraPrima.png",
+    "Sagensie.png",
   ];
 
   const companyLogos = companyFiles.map((file) => `${basePath}/${file}`);
 
   return (
-    <section className="py-12 px-4">
+    <section className="px-4">
       <div className="mx-auto max-w-7xl">
-        <div className="w-full py-8">
-          <Marquee gradient={true} speed={50}>
+        <div className="w-full py-2">
+          <Marquee gradient={true} speed={50} direction="right">
             {companyLogos.map((logo, index) => (
               <div key={index} className="mx-8">
                 <Image

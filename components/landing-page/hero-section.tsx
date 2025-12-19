@@ -8,47 +8,41 @@ import Link from "next/link";
 
 const heroSlides = [
   {
-    headline: "Competence Changes Everything",
+    headline: "PROVEN GLOBAL LEADERSHIP LEADERS",
     highlight: {
-      word: "Competence",
-      className: "text-brand-accent",
+      word: "Leadership",
+      className: "",
     },
-    subheadline: "We don’t train skills. We build competence.",
-    paragraph:
-      "Through real work, real coaching, and real accountability. We turn raw potential into industry-ready performers.",
-    boldWords: ["Competence", "industry-ready performers."],
+    subheadline:
+      "Founded by John C. Maxwell, Maxwell Leadership brings proven global leadership standards to Indonesia.",
+    boldWords: ["John C. Maxwell", "Maxwell Leadership", "leadership"],
     backgroundClass:
-      "bg-gradient-to-t from-secondary via-primary/70 to-primary",
-    href: "/#cta",
-    cta: "Join Us Now",
-    photos: "/photos/main-hero-3.jpeg",
+      "bg-gradient-to-r from-transparent via-primary/70 to-primary",
+    href: "/",
+    cta: "Learn More",
+    photos: "/photos/main-hero-3.png",
   },
   {
-    headline: "Leaders Create Leaders",
-    highlight: {
-      word: "Leaders",
-      className: "text-brand-accent",
-    },
-    subheadline: "We deliver talent trained to lead with real competence.",
-    boldWords: ["Competence"],
+    headline: "FROM LOCAL TO GLOBAL LEADERS",
+    subheadline:
+      "Through GOVOKASi, Indonesian talent is developed to meet global leadership standards.",
+    boldWords: ["GOVOKASI", "leadership"],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
-    href: "/companies",
-    cta: "Find Top Talent",
-    photos: "/photos/main-hero-2.jpeg",
+    href: "/",
+    cta: "Explore Program",
+    photos: "/photos/main-hero-2.png",
   },
   {
-    headline: "Accelerate Growth Through Mentorship & Placement",
-    highlight: {
-      word: "Accelerate Growth",
-      className: "text-brand-accent",
-    },
-    subheadline: "Real projects, real coaching, real opportunities await.",
+    headline: "BUILD THE LEADER YOU’RE MEANT TO BECOME",
+    subheadline:
+      "Powered by Maxwell Leadership, the Leadership Development Program helps you build clarity, confidence and influence. So you can lead with purpose and create impact beyond your role.",
+    boldWords: ["Maxwell Leadership", "Leadership Development Program"],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/talent",
-    cta: "Explore Programs",
-    photos: "/photos/25060.jpg",
+    cta: "Start Your Leadership Journey",
+    photos: "/photos/main-hero-1.png",
   },
 ];
 
@@ -120,8 +114,7 @@ export function HeroSection() {
       <div>
         <div
           className={cn(
-            "absolute inset-0 transition-all duration-1000 ease-out z-10",
-            slide.backgroundClass
+            "absolute inset-0 transition-all duration-1000 ease-out z-10"
           )}
         />
         <Image
@@ -133,16 +126,13 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <div className="max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+      <div className="relative z-10 flex flex-col items-start justify-center h-full max-w-7xl mx-auto px-4">
+        <div className="max-w-2xl animate-fade-in text-start p-8 bg-primary/50 rounded-2xl backdrop-blur-md space-y-4">
+          <h1 className="text-5xl font-bold text-white leading-tight">
             {renderHeadline(slide.headline, slide.highlight)}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mt-6 max-w-2xl mx-auto">
+          <p className="text-2xl text-white/90 mt-6 ">
             {boldWords(slide.subheadline, slide.boldWords ?? [])}
-          </p>
-          <p className="text-lg md:text-xl text-white/85 mt-4 max-w-4xl mx-auto leading-tight">
-            {boldWords(slide.paragraph ?? "", slide.boldWords ?? [])}
           </p>
 
           {/* OPSIONAL LIST */}
@@ -158,11 +148,10 @@ export function HeroSection() {
               </ul>
             </div>
           )}*/}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-            <button className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
-              <Link href={slide.href}>{slide.cta}</Link>
-            </button>
-          </div>
+
+          <button className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105 mt-6">
+            <Link href={slide.href}>{slide.cta}</Link>
+          </button>
         </div>
       </div>
 
@@ -216,7 +205,7 @@ function boldWords(text: string, words: string[]) {
 
       return parts.map((p, i) =>
         p.toLowerCase() === word.toLowerCase() ? (
-          <strong key={i} className="font-bold">
+          <strong key={i} className="font-semibold text-brand-accent">
             {p}
           </strong>
         ) : (

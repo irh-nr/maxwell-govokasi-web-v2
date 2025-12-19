@@ -17,22 +17,30 @@ import {
 } from "@/components/ui/navigation-menu";
 
 export function Navigation() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinksStatic = [
     //{ name: "Curriculum", href: "/#curriculum" },
-    { name: "Engage The Coach", href: "/" },
-    { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   const navLinksMobile = [
     { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
     { name: "Explore Talent Path", href: "/talent" },
     { name: "Explore Company Solutions", href: "/companies" },
     //{ name: "Curriculum", href: "/#curriculum" },
-    { name: "Engage The Coach", href: "/" },
-    { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -62,42 +70,65 @@ export function Navigation() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href={"/"}>
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <span className={cn("font-bold text-lg hidden text-primary")}>
+              <span
+                className={cn(
+                  "font-bold text-lg hidden",
+                  isScrolled ? "text-primary" : "text-white"
+                )}
+              >
                 Maxwell
               </span>
-
-              <Image
-                src={"/brand-logo/maxwell.png"}
-                alt="Maxwell Logo"
-                height={100}
-                width={100}
-                className="pb-4"
-              />
-
+              {isScrolled ? (
+                <Image
+                  src={"/brand-logo/maxwell.png"}
+                  alt="Maxwell Logo"
+                  height={100}
+                  width={100}
+                  className="pb-4"
+                />
+              ) : (
+                <Image
+                  src={"/brand-logo/maxwell-white.png"}
+                  alt="Maxwell Logo"
+                  height={100}
+                  width={100}
+                  className="pb-1"
+                />
+              )}
               <span className="text-muted-foreground mx-1 pointer-events-none">
                 ×
               </span>
-
-              <Image
-                src={"/brand-logo/GV-Blue.png"}
-                alt="GOVOKASi Logo"
-                height={100}
-                width={100}
-                className="pt-1"
-              />
+              {isScrolled ? (
+                <Image
+                  src={"/brand-logo/GV-Blue.png"}
+                  alt="GOVOKASi Logo"
+                  height={100}
+                  width={100}
+                  className="pt-1"
+                />
+              ) : (
+                <Image
+                  src={"/brand-logo/GV-white.png"}
+                  alt="GOVOKASi Logo"
+                  height={100}
+                  width={100}
+                  className="pt-2"
+                />
+              )}
             </div>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden md:flex items-center">
             <NavigationMenu className="z-20">
               <NavigationMenuList className="space-x-8">
                 <NavigationMenuItem>
@@ -110,7 +141,9 @@ export function Navigation() {
                       "disabled:pointer-events-none disabled:opacity-50",
                       "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
                       "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
-                      "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                      isScrolled
+                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
                     )}
                   >
                     <Link href={"/"}>Home</Link>
@@ -136,7 +169,7 @@ export function Navigation() {
                         Explore structured learning routes designed to build
                         skills and guide you toward career readiness.
                       </ListItem>
-                      <ListItem href="/#how-it-works" title="Our Coaches">
+                      <ListItem href="/#how-it-works" title="How It Works">
                         Understand our step-by-step process for learning, skill
                         development, and achieving measurable progress.
                       </ListItem>
@@ -161,7 +194,47 @@ export function Navigation() {
                       "disabled:pointer-events-none disabled:opacity-50",
                       "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
                       "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
-                      "text-muted-foreground hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                      isScrolled
+                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
+                    )}
+                  >
+                    <Link href={"/about-us"}>About Us</Link>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-4">
+                    <ul className="grid gap-2 sm:w-[400px]">
+                      <ListItem
+                        href="/about-us/#maxwell"
+                        title="About Maxwell Leadership"
+                      >
+                        Explore our leadership philosophy, guiding principles,
+                        and commitment to developing future leaders.
+                      </ListItem>
+                      <ListItem
+                        href="/about-us/#govokasi"
+                        title="About GOVOKASi"
+                      >
+                        Learn how GOVOKASi empowers talent and organizations
+                        through education, innovation, and strategic
+                        initiatives.
+                      </ListItem>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
+                      "before:absolute before:bottom-0 before:inset-x-0 before:h-0.5 before:bg-primary before:scale-x-0 before:transition-transform",
+                      "hover:before:scale-x-100",
+                      "focus:before:scale-x-100 focus:outline-hidden",
+                      "disabled:pointer-events-none disabled:opacity-50",
+                      "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100 data-[state=open]:bg-transparent!",
+                      "hover:bg-transparent! active:bg-transparent! focus:bg-transparent! bg-transparent ",
+                      isScrolled
+                        ? "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        : "text-white hover:text-white! focus:text-white! before:bg-white! data-[state=open]:text-white!"
                     )}
                   >
                     Explore
@@ -194,7 +267,9 @@ export function Navigation() {
                         "disabled:pointer-events-none disabled:opacity-50",
                         "data-active:before:scale-x-100 data-[state=open]:before:scale-x-100",
                         "hover:bg-transparent active:bg-transparent focus:bg-transparent",
-                        "text-muted-foreground hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
+                        isScrolled
+                          ? "text-primary hover:text-primary focus-text-primary before:bg-primary"
+                          : "text-white hover:text-white focus:text-white before:bg-white"
                       )}
                       asChild
                     >
@@ -211,15 +286,36 @@ export function Navigation() {
             </NavigationMenu>
           </div>
 
+          {/* Segment Selector */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex rounded-full p-1"></div>
+            <button
+              className={cn(
+                "px-6 py-2 rounded-lg transition-colors text-sm font-medium",
+                isScrolled
+                  ? "bg-primary text-white  hover:bg-primary/90"
+                  : "bg-white text-primary  hover:bg-white/90"
+              )}
+            >
+              <Link href={"#cta"}>Get Started</Link>
+            </button>
+          </div>
+
           {/* Mobile Menu Toggle */}
           <button
-            className={cn("lg:hidden p-2")}
+            className={cn("md:hidden p-2")}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X size={24} className={cn("text-primary")} />
+              <X
+                size={24}
+                className={cn(isScrolled ? "text-primary" : "text-white")}
+              />
             ) : (
-              <Menu size={24} className={cn("text-primary")} />
+              <Menu
+                size={24}
+                className={cn(isScrolled ? "text-primary" : "text-white")}
+              />
             )}
           </button>
         </div>

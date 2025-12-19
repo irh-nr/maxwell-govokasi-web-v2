@@ -1,10 +1,5 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const testimonials = [
   {
@@ -46,144 +41,108 @@ const testimonials = [
 ];
 
 export function SuccessStories() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [filteredTestimonials, setFilteredTestimonials] =
-    useState(testimonials);
-  const [isAutoplay, setIsAutoplay] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(1);
 
   useEffect(() => {
-    if (!isAutoplay || filteredTestimonials.length === 0) return;
+    const handleResize = () => {
+      if (window.innerWidth >= 1024)
+        setItemsPerPage(2); // Show 2 cards as per image
+      else setItemsPerPage(1);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % filteredTestimonials.length);
-    }, 3000);
+  const maxIndex = Math.max(0, testimonials.length - itemsPerPage);
 
-    return () => clearInterval(interval);
-  }, [isAutoplay, filteredTestimonials.length]);
-
-  const goToPrevious = () => {
-    setIsAutoplay(false);
-    setActiveIndex(
-      (prev) =>
-        (prev - 1 + filteredTestimonials.length) % filteredTestimonials.length
-    );
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
-  const goToNext = () => {
-    setIsAutoplay(false);
-    setActiveIndex((prev) => (prev + 1) % filteredTestimonials.length);
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
-
-  const currentTestimonial = filteredTestimonials[activeIndex];
 
   return (
-    <section
-      id="success-stories"
-      className="py-24 px-4 bg-linear-to-b from-white to-muted"
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Success Stories
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Real transformations from alumni who completed the Maxwell
-            Leadership program and are now leading impact across industries.
-          </p>
-        </div>
+    <section id="success-stories" className="py-24 md:px-12 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row mb-12 gap-x-24 gap-y-10">
+          {/* Left Label */}
+          <div className="min-w-[120px]">
+            <h2 className="text-[14px] font-bold uppercase tracking-[0.2em] leading-tight text-foreground">
+              Success <br />
+              Stories
+            </h2>
+            <div className="mt-2 h-1 w-16 bg-gradient-to-r from-purple-700 via-purple-400 to-transparent rounded-full" />
+          </div>
 
-        <div>
-          {/* Carousel */}
-          {currentTestimonial && (
-            <div className="relative">
-              <div className="card-depth rounded-2xl overflow-hidden bg-white border border-border p-4">
-                <div className="grid md:grid-cols-2 gap-0">
-                  {/* Image Side */}
-                  <div className="relative bg-linear-to-br from-primary/10 to-secondary/10 min-h-96 md:min-h-full flex items-center justify-center rounded-lg p-4">
-                    <img
-                      src={currentTestimonial.image || "/placeholder.svg"}
-                      alt={currentTestimonial.name}
-                      className="w-full h-full rounded-xl object-cover shadow-lg"
-                    />
-                  </div>
+          <div className="w-full">
+            {/* Header Title and Nav */}
+            <div className="flex justify-between items-center gap-4">
+              <h1 className="text-[30px] md:text-[36px] font-bold leading-tight">
+                What Our Talents Are Saying
+              </h1>
 
-                  {/* Content Side */}
-                  <div className="p-10 md:p-12 flex flex-col justify-between">
-                    {/* Company Logo */}
-                    <div className="w-16 h-16 bg-linear-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg mb-6 shadow-md">
-                      {currentTestimonial.logo}
-                    </div>
+              <div className="flex gap-3">
+                <button
+                  onClick={handlePrev}
+                  className="p-2 md:p-3 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="p-2 md:p-3 rounded-full bg-black text-white hover:bg-black/80 transition-colors"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            </div>
 
-                    {/* Quote */}
-                    <div className="mb-8">
-                      <p className="text-2xl md:text-3xl text-foreground font-light leading-relaxed mb-6">
-                        "{currentTestimonial.quote}"
+            {/* Carousel Container */}
+            <div className="relative overflow-hidden mt-12">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{
+                  transform: `translateX(-${
+                    currentIndex * (100 / itemsPerPage)
+                  }%)`,
+                }}
+              >
+                {testimonials.map((item, index) => (
+                  <div key={index} className="w-full lg:w-1/2 shrink-0 px-3">
+                    {/* Testimonial Card */}
+                    <div className="h-full border border-gray-200 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between bg-white">
+                      {/* Italicized Quote */}
+                      <p className="text-[17px] md:text-[18px] italic text-gray-700 leading-relaxed mb-10">
+                        “{item.quote}”
                       </p>
-                    </div>
 
-                    {/* Author Info */}
-                    <div>
-                      <p className="text-xl font-bold text-foreground">
-                        {currentTestimonial.name}
-                      </p>
-                      <p className="text-base text-muted-foreground mb-4">
-                        {currentTestimonial.position} at{" "}
-                        {currentTestimonial.company}
-                      </p>
-
-                      {/* Slide Indicators */}
-                      <div className="flex gap-2 mt-6">
-                        {filteredTestimonials.map((_, index) => (
-                          <div
-                            key={index}
-                            className={cn(
-                              "h-2 rounded-full transition-all",
-                              index === activeIndex
-                                ? "w-8 bg-primary"
-                                : "w-2 bg-border"
-                            )}
+                      {/* Footer: Image + Name + Position/Company */}
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 shrink-0 rounded-xl overflow-hidden bg-gray-100">
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
                           />
-                        ))}
+                        </div>
+                        <div className="flex flex-col">
+                          <h4 className="text-[18px] font-bold text-gray-900 leading-snug">
+                            {item.name}
+                          </h4>
+                          <p className="text-[13px] text-gray-500 font-medium">
+                            {item.position} at {item.company}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
-
-              {/* Navigation Arrows */}
-              <button
-                onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-primary hover:text-white transition-all md:-left-16"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-primary hover:text-white transition-all md:-right-16"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight size={24} />
-              </button>
             </div>
-          )}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-6 pt-6 border-t border-border/50">
-          <p className="text-lg text-foreground font-medium mb-4">
-            Your journey starts today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white rounded-full"
-              asChild
-            >
-              <Link href={"/form/talent"}>Join Maxwell Leadership Program</Link>
-            </Button>
           </div>
         </div>
       </div>
