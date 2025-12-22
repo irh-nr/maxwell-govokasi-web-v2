@@ -4,23 +4,38 @@ import { useState, useEffect } from "react";
 const coaches = [
   {
     name: "David Tjokrorahardjo",
-    position: "President",
+    position: "Business Leadership Coach",
     image: "coaches/DT.jpg", // Replace with actual image paths
   },
   {
     name: "Merry Riana",
-    position: "Maxwell Thought Leader",
+    position: "MD Principal Advisor",
     image: "coaches/MR.jpg",
   },
   {
     name: "Stephen Sebastian",
-    position: "Maxwell Thought Leader",
-    image: "coaches/ST.jpg",
+    position: "CEO x Founder of GOVOKASi",
+    image: "coaches/SS.jpg",
   },
   {
-    name: "Sarah Mitchell",
-    position: "VP of Talent",
-    image: "/professional-woman-tech.jpg",
+    name: "Anjelica Reisa",
+    position: "COO x Co-Founder of GOVOKASi",
+    image: "coaches/AR.jpeg",
+  },
+  {
+    name: "Sony Tan",
+    position: "HR Director",
+    image: "coaches/ST.jpeg",
+  },
+  {
+    name: "Lisa Sanusi",
+    position: "Founder of GOVOKASi",
+    image: "coaches/LS.jpeg",
+  },
+  {
+    name: "Ary M. Wibowo",
+    position: "Leadership Coach",
+    image: "coaches/AW.jpeg",
   },
 ];
 

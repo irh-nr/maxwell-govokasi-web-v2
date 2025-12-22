@@ -4,21 +4,15 @@ import { Users, Briefcase, Crown } from "lucide-react";
 const aboutCards = [
   {
     icon: Users,
-    title: "Entry-Level OJT",
+    title: "On-the-Job Training (OJT) Program",
     description:
-      "Foundation-building program for fresh graduates and junior professionals. Develop core competencies in real-world environments with mentorship from industry leaders.",
+      "The On-the-Job Training (OJT) Program provides hands-on work experience for students and recent graduates by placing them in real roles within partner companies. \n\nParticipants gain practical skills, build professional confidence, and bridge the gap between academic learning and workplace expectations. \n\nThrough structured mentoring and performance feedback, the program accelerates career readiness and supports young talent in becoming effective contributors from day one.",
   },
   {
     icon: Briefcase,
-    title: "Management Trainee",
+    title: "Maxwell Leadership Development Program",
     description:
-      "Strategic program for mid-level professionals transitioning into management. Master leadership principles and operational excellence while building your executive network.",
-  },
-  {
-    icon: Crown,
-    title: "C-Suite Development",
-    description:
-      "Executive-level program for senior leaders and board aspirants. Refine visionary thinking, strategic decision-making, and enterprise leadership capabilities.",
+      "The Leadership Development Program, offered through the collaboration between Maxwell Leadership and GOVOKASi, equips emerging leaders with the mindset, skills, and practices needed to lead with influence and purpose. \n\nRooted in globally recognized Maxwell Leadership principles and reinforced with contextualized learning pathways, the program combines experiential activities, coaching, and real-world application. \n\nIt prepares participants to lead teams, drive organizational results, and create positive impact across Indonesia.",
   },
 ];
 
@@ -45,7 +39,7 @@ export default function Programs() {
                 support career growth.
               </h1>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {aboutCards.map((card, idx) => {
                 const Icon = card.icon;
                 return (
@@ -64,7 +58,7 @@ export default function Programs() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-foreground/70 leading-relaxed">
+                    <p className="whitespace-pre-line text-foreground/70 ">
                       {card.description}
                     </p>
 

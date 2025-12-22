@@ -1,62 +1,78 @@
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Lightbulb, Target } from "lucide-react";
 import Image from "next/image";
 
 export default function VisionMissionSection() {
+  const missionItems = [
+    "To equip young talents and professionals with practical leadership skills through experiential learning and real-world exposure.",
+    "To integrate global leadership principles from Maxwell Leadership with local talent development through GOVOKASi.",
+    "To bridge education and industry by preparing future leaders who lead with integrity, influence, and impact.",
+    "To create a scalable ecosystem that accelerates leadership growth across Indonesia.",
+  ];
   return (
-    <section id="vision-mission" className="py-24 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 relative">
-          {/* Vertical Divider */}
-          <div className="hidden md:block absolute left-1/2 top-0 h-full w-px bg-gray-300"></div>
+    <div className="relative w-full h-fit">
+      {/* Background */}
 
-          {/* Vision */}
-          <div className="flex flex-col items-center text-center px-6">
-            {/* PURPLE RECTANGLE */}
-            <div className="bg-primary p-4 rounded-xl mb-6 flex items-center justify-center">
-              <Image
-                src="/photos/Innovation.png"
-                alt="Vision Icon"
-                width={40}
-                height={40}
-                className="invert brightness-0"
-              />
+      <div
+        className={cn("absolute inset-0 transition-all duration-1000 ease-out")}
+      />
+      <Image
+        src={"/photos/vision-mission-bg.jpeg"}
+        alt=""
+        fill
+        className="object-cover"
+      />
+
+      <section id="ldp" className="relative z-10 py-24 md:px-12 my-auto">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-col gap-y-20">
+            {/* OUR VISION */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 items-start text-white">
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-full border border-white/20 bg-white/10 shadow-lg">
+                  <Lightbulb className="w-8 h-8 " />
+                </div>
+                <h2 className="text-sm font-bold uppercase tracking-widest leading-tight text-shadow-lg">
+                  Our <br /> Vision
+                </h2>
+              </div>
+              <div>
+                <p className="text-lg md:text-xl leading-relaxed font-medium max-w-4xl">
+                  To build a strong and sustainable leadership pipeline that
+                  develops transformational leaders for Indonesia, from campus
+                  to corporate.
+                </p>
+              </div>
             </div>
 
-            <h3 className="text-2xl font-bold mb-4">Vision</h3>
-
-            <p className="leading-relaxed max-w-sm">
-              Menempatkan karir Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
-          </div>
-
-          {/* Mission */}
-          <div className="flex flex-col items-center text-center px-6">
-            {/* PURPLE RECTANGLE */}
-            <div className="bg-primary p-4 rounded-xl mb-6 flex items-center justify-center">
-              <Image
-                src="/photos/Goal.png"
-                alt="Mission Icon"
-                width={40}
-                height={40}
-                className="invert brightness-0"
-              />
+            {/* OUR MISSION */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 items-start text-white">
+              <div className="flex items-center gap-4 ">
+                <div className="p-3 rounded-full border border-white/20 bg-white/10 shadow-lg">
+                  <Target className="w-8 h-8 text-white " />
+                </div>
+                <h2 className="text-sm font-bold uppercase tracking-widest leading-tight text-shadow-lg">
+                  Our <br /> Mission
+                </h2>
+              </div>
+              <div>
+                <ul className="space-y-4 max-w-4xl">
+                  {missionItems.map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex gap-3 text-base md:text-lg opacity-90 leading-tight"
+                    >
+                      <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-
-            <h3 className="text-2xl font-bold mb-4">Mission</h3>
-
-            <p className="leading-relaxed max-w-sm">
-              Menempatkan karir Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

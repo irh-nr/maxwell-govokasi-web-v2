@@ -28,13 +28,18 @@ export default function MainSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-4">Maxwell</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              About Maxwell Leadership
+            </h3>
             <p className="leading-relaxed">
-              Penjelasan company profile terkait Maxwell. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
+              Maxwell Leadership helps individuals and organizations grow as
+              effective leaders. Based on the leadership principles of John C.
+              Maxwell, Maxwell Leadership deliver practical and impactful
+              leadership training tailored to the Indonesian context. Our
+              mission is to develop leaders who lead with integrity, influence
+              others positively, and create lasting impact. Through training
+              programs, coaching, certifications, and events, we are committed
+              to supporting the growth of strong leaders for Indonesia’s future.
             </p>
           </div>
         </div>
@@ -42,13 +47,14 @@ export default function MainSection() {
         {/* GOVOKASi SECTION */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold mb-4">GOVOKASi</h3>
+            <h3 className="text-2xl font-bold mb-4">About GOVOKASi</h3>
             <p className="leading-relaxed">
-              Penjelasan company profile terkait Govokasi. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
+              GOVOKASi is a career development platform that helps young talent
+              prepare for the world of work. We provide training, mentorship,
+              and internship programs that connect students and fresh graduates
+              with companies across Indonesia. By bridging education and
+              industry, GOVOKASi supports individuals in building their careers
+              and helps organizations access ready-to-work talent.
             </p>
           </div>
 
