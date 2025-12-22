@@ -211,7 +211,7 @@ export function Navigation() {
             </NavigationMenu>
           </div>
 
-          <button className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
+          <button className="hidden md:flex px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
             <Link href={"#cta"}>Join Us Now</Link>
           </button>
 

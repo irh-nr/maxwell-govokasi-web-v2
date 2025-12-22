@@ -109,7 +109,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative w-full h-screen pt-20 overflow-hidden">
+    <section className="relative w-full h-[140dvh] md:h-[95dvh] pt-20 overflow-hidden">
       {/* Background */}
       <div>
         <div
