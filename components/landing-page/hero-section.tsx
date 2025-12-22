@@ -127,7 +127,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-start justify-center h-full max-w-7xl mx-auto px-4">
-        <div className="max-w-2xl animate-fade-in text-start p-8 bg-primary/50 rounded-2xl backdrop-blur-md space-y-4">
+        <div className="max-w-2xl animate-fade-in text-start p-8 bg-primary/50 rounded-2xl backdrop-blur-md space-y-4 shadow-2xl">
           <h1 className="text-5xl font-bold text-white leading-tight">
             {renderHeadline(slide.headline, slide.highlight)}
           </h1>

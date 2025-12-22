@@ -112,9 +112,12 @@ export function SuccessStories() {
                 }}
               >
                 {testimonials.map((item, index) => (
-                  <div key={index} className="w-full lg:w-1/2 shrink-0 px-3">
+                  <div
+                    key={index}
+                    className="w-full lg:w-1/2 shrink-0 px-3 p-4"
+                  >
                     {/* Testimonial Card */}
-                    <div className="h-full border border-gray-200 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between bg-white">
+                    <div className="h-full border border-gray-200 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between bg-white border border-border/30 hover:border-primary/50 shadow-sm transition-all">
                       {/* Italicized Quote */}
                       <p className="text-[17px] md:text-[18px] italic text-gray-700 leading-relaxed mb-10">
                         “{item.quote}”

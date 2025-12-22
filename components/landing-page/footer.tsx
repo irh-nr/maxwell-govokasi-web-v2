@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer id="contact" className="bg-secondary text-white py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="flex flex-col md:flex-row justify-between gap-12 mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4 max-h-8">
@@ -35,54 +35,39 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-4">For Talent</h4>
+            <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-white/70 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="#about"
+                  className="hover:text-white transition-colors"
+                >
                   Programs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="#coaches"
+                  className="hover:text-white transition-colors"
+                >
                   Coaches
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="#cta"
+                  className="hover:text-white transition-colors"
+                >
                   Apply
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="#faq"
+                  className="hover:text-white transition-colors"
+                >
                   FAQ
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* For Companies */}
-          <div>
-            <h4 className="font-bold mb-4">For Companies</h4>
-            <ul className="space-y-2 text-white/70 text-sm">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Solutions
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Case Studies
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Contact Sales
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -121,7 +106,7 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-white/10 pt-8 mb-8">
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
+            <div className="hidden">
               <h4 className="font-bold mb-3">Company</h4>
               <ul className="space-y-2 text-white/70 text-sm">
                 <li>

@@ -21,19 +21,19 @@ export function Navigation() {
 
   const navLinksStatic = [
     //{ name: "Curriculum", href: "/#curriculum" },
-    { name: "Engage The Coach", href: "/" },
+    //{ name: "Engage The Coach", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Contact Us", href: "/contact" },
+    //{ name: "Contact Us", href: "/contact" },
   ];
 
   const navLinksMobile = [
     { name: "Home", href: "/" },
-    { name: "Explore Talent Path", href: "/talent" },
-    { name: "Explore Company Solutions", href: "/companies" },
+    //{ name: "Explore Talent Path", href: "/talent" },
+    //{ name: "Explore Company Solutions", href: "/companies" },
     //{ name: "Curriculum", href: "/#curriculum" },
-    { name: "Engage The Coach", href: "/" },
+    //{ name: "Engage The Coach", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Contact Us", href: "/contact" },
+    //{ name: "Contact Us", href: "/contact" },
   ];
 
   const programs = [
@@ -151,7 +151,7 @@ export function Navigation() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="hidden">
                   <NavigationMenuTrigger
                     className={cn(
                       "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
@@ -211,6 +211,10 @@ export function Navigation() {
             </NavigationMenu>
           </div>
 
+          <button className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
+            <Link href={"#cta"}>Join Us Now</Link>
+          </button>
+
           {/* Mobile Menu Toggle */}
           <button
             className={cn("lg:hidden p-2")}
@@ -255,7 +259,7 @@ export function Navigation() {
                       setIsMobileMenuOpen(false);
                     }}
                   >
-                    Get Started
+                    Join Us Now
                   </Link>
                 </button>
               </div>

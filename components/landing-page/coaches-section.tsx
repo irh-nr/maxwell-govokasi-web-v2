@@ -103,12 +103,12 @@ export function CoachesSection() {
                     className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3"
                   >
                     {/* The Card */}
-                    <div className="relative aspect-[1/1] rounded-[2rem] overflow-hidden group bg-gray-200">
+                    <div className="relative aspect-[1/1] rounded-[2rem] overflow-hidden group bg-gray-200 hover:scale-99 group transition-all duration-300">
                       {/* Image Background */}
                       <img
                         src={coach.image}
                         alt={coach.name}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
                       />
 
                       {/* Subtle Gradient for text readability */}
