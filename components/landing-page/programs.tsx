@@ -22,9 +22,9 @@ const aboutCards = [
   },
 ];
 
-export default function About() {
+export default function Programs() {
   return (
-    <section id="about" className="py-24 md:px-12 bg-background">
+    <section id="programs" className="py-24 md:px-12 bg-background">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-x-24 gap-y-10">
           {/* Title - starts at column 1 */}

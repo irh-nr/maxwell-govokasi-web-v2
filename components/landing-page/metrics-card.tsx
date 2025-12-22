@@ -35,7 +35,7 @@ export default function MetricsCard() {
         <div className="absolute inset-0 bg-background/40" />
       </div>
 
-      <section id="about" className="relative z-10 py-24 px-4">
+      <section className="relative z-10 py-24 px-4">
         <div className="max-w-7xl mx-auto">
           {/* 
               Flex-wrap with justify-center handles the "4 top, 3 bottom" logic.

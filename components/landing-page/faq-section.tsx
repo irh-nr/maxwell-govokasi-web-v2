@@ -42,9 +42,9 @@ const faqData = [
 
 export function FaqSection() {
   return (
-    <section id="faq">
-      <div className="max-w-7xl mx-auto py-10">
-        <div className="p-4 flex flex-col justify-between gap-12 items-center">
+    <section id="faq" className="py-24 md:px-12 bg-background">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="p-4 flex flex-col justify-between gap-16 items-center">
           <div className="text-center">
             <h2 className="text-3xl font-bold">Frequently Asked Question</h2>
             <p className="inline-block mt-2">
@@ -53,8 +53,26 @@ export function FaqSection() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="max-w-2xl flex justify-center items-center">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-3/4"
+            defaultValue="item-1"
+          >
+            {faqData.map((faq) => (
+              <AccordionItem key={faq.value} value={faq.value}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent className="flex flex-col text-balance">
+                  {faq.answers.map((ans, idx) => (
+                    <p key={idx}>{ans}</p>
+                  ))}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <div className="hidden flex-col lg:flex-row justify-center items-center">
+            <div className="flex justify-center items-center">
               <Accordion
                 type="single"
                 collapsible

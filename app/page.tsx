@@ -12,7 +12,7 @@ import CompanyMarqueeT from "@/components/landing-page/compay-logo-marquee-t";
 import CompanyMarqueeReverse from "@/components/landing-page/compay-logo-marquee-reverse";
 import LDPSection from "@/components/landing-page/ldp-section";
 
-import About from "@/components/landing-page/about";
+import Programs from "@/components/landing-page/programs";
 import { FaqSection } from "@/components/landing-page/faq-section";
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
       <CompanyMarqueeReverse />
       <CompanyMarqueeB />
       <LDPSection />
-      <About />
+      <Programs />
       <CoachesSection />
       <SuccessStories />
       <CtaBanner />

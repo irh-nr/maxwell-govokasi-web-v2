@@ -113,7 +113,7 @@ export function Navigation() {
                       "text-primary hover:text-primary! focus-text-primary! before:bg-primary! data-[state=open]:text-primary!"
                     )}
                   >
-                    <Link href={"/"}>Home</Link>
+                    <Link href={"/#"}>Home</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="p-4">
                     <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -121,7 +121,7 @@ export function Navigation() {
                         <NavigationMenuLink asChild>
                           <a
                             className="bg-gradient-to-br from-primary via-primary/80 to-secondary flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
-                            href="/"
+                            href="/#"
                           >
                             <div className="mb-2 text-lg text-white font-medium sm:mt-4">
                               Maxwell x GOVOKASi
@@ -132,11 +132,11 @@ export function Navigation() {
                           </a>
                         </NavigationMenuLink>
                       </li>
-                      <ListItem href="/#about" title="Program Pathways">
+                      <ListItem href="/#programs" title="Program Pathways">
                         Explore structured learning routes designed to build
                         skills and guide you toward career readiness.
                       </ListItem>
-                      <ListItem href="/#how-it-works" title="Our Coaches">
+                      <ListItem href="/#coaches" title="Our Coaches">
                         Understand our step-by-step process for learning, skill
                         development, and achieving measurable progress.
                       </ListItem>

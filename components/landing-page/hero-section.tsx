@@ -18,7 +18,7 @@ const heroSlides = [
     boldWords: ["John C. Maxwell", "Maxwell Leadership", "leadership"],
     backgroundClass:
       "bg-gradient-to-r from-transparent via-primary/70 to-primary",
-    href: "/",
+    href: "/#progams",
     cta: "Learn More",
     photos: "/photos/main-hero-3.png",
   },
@@ -29,7 +29,7 @@ const heroSlides = [
     boldWords: ["GOVOKASI", "leadership"],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
-    href: "/",
+    href: "/#programs",
     cta: "Explore Program",
     photos: "/photos/main-hero-2.png",
   },
@@ -40,7 +40,7 @@ const heroSlides = [
     boldWords: ["Maxwell Leadership", "Leadership Development Program"],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
-    href: "/talent",
+    href: "#cta",
     cta: "Start Your Leadership Journey",
     photos: "/photos/main-hero-1.png",
   },

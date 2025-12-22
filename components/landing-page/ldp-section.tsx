@@ -19,7 +19,7 @@ export default function LDPSection() {
 
       <section id="ldp" className="relative z-10 py-24 md:px-12 my-auto">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-x-24 gap-y-10">
+          <div className="flex flex-col lg:flex-row gap-x-20 gap-y-10">
             {/* Title - starts at column 1 */}
             <div className="min-w-[120px]">
               <h2 className="text-[14px] font-bold uppercase tracking-[0.2em] leading-tight text-white">
