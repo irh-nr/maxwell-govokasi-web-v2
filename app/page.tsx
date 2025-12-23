@@ -1,5 +1,3 @@
-"use client";
-
 import { HeroSection } from "@/components/landing-page/hero-section";
 import { ValueProposition } from "@/components/landing-page/value-proposition";
 import { CoachesSection } from "@/components/landing-page/coaches-section";
