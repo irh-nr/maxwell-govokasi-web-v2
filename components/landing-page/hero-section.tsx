@@ -18,7 +18,7 @@ const heroSlides = [
     boldWords: ["John C. Maxwell", "Maxwell Leadership", "leadership"],
     backgroundClass:
       "bg-gradient-to-r from-transparent via-primary/70 to-primary",
-    href: "/#progams",
+    href: "/about-us",
     cta: "Learn More",
     photos: "/photos/main-hero-3.png",
   },
