@@ -78,10 +78,10 @@ export default function Programs() {
   return (
     <section id="programs" className="py-24 md:px-12 bg-background">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-x-24 gap-y-12">
+        <div className="flex flex-col lg:flex-row gap-x-24 gap-y-10">
           {/* Left Sidebar: Title */}
-          <div className="min-w-[120px]">
-            <div className="sticky top-24">
+          <div className="min-w-[120px] mt-2">
+            <div className="sticky top-32">
               <h2 className="text-[14px] font-bold uppercase tracking-[0.2em] leading-tight text-foreground">
                 Program <br /> Pathways
               </h2>
@@ -91,7 +91,7 @@ export default function Programs() {
 
           {/* Right Content */}
           <div className="lg:w-3/4 space-y-16">
-            <h1 className="text-[32px] font-bold leading-tight max-w-2xl text-balance">
+            <h1 className="text-[30px] font-bold leading-tight max-w-2xl text-balance">
               A structured series of programs to support career growth.
             </h1>
 

@@ -75,13 +75,13 @@ export function SuccessStories() {
               Success <br />
               Stories
             </h2>
-            <div className="mt-2 h-1 w-16 bg-gradient-to-r from-purple-700 via-purple-400 to-transparent rounded-full" />
+            <div className="mt-3 h-1 w-16 bg-gradient-to-r from-purple-700 via-purple-400 to-transparent rounded-full" />
           </div>
 
           <div className="w-full">
             {/* Header Title and Nav */}
             <div className="flex justify-between items-center gap-4">
-              <h1 className="text-[30px] md:text-[36px] font-bold leading-tight">
+              <h1 className="text-[30px] font-bold leading-tight max-w-2xl text-balance">
                 What Our Talents Are Saying
               </h1>
 
