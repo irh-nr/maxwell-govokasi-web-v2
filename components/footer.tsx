@@ -79,7 +79,9 @@ export function Footer() {
             <h4 className="font-bold mb-4">Contact</h4>
             <div className="space-y-3">
               <p className="text-white/70 text-sm hover:text-white transition-colors">
-                <Link href={"mailto:"}>contact@maxwell-govokasi.com</Link>
+                <Link href={"mailto:hello@govokasi.com"}>
+                  hello@govokasi.com
+                </Link>
               </p>
               <div className="flex gap-3">
                 <Link
