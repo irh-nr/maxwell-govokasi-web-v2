@@ -9,25 +9,27 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4 max-h-8">
-              <Image
-                src={"/brand-logo/maxwell-white.png"}
-                alt="Maxwell Logo"
-                height={100}
-                width={100}
-                className="pb-1"
-              />
-              <span className="text-muted-foreground mx-1 pointer-events-none">
-                ×
-              </span>
-              <Image
-                src={"/brand-logo/GV-white.png"}
-                alt="GOVOKASi Logo"
-                height={100}
-                width={100}
-                className="pt-2"
-              />
-            </div>
+            <Link href={"/"}>
+              <div className="flex items-center gap-2 mb-4 max-h-8">
+                <Image
+                  src={"/brand-logo/maxwell-white.png"}
+                  alt="Maxwell Logo"
+                  height={100}
+                  width={100}
+                  className="pb-1"
+                />
+                <span className="text-muted-foreground mx-1 pointer-events-none">
+                  ×
+                </span>
+                <Image
+                  src={"/brand-logo/GV-white.png"}
+                  alt="GOVOKASi Logo"
+                  height={100}
+                  width={100}
+                  className="pt-2"
+                />
+              </div>
+            </Link>
             <p className="text-white/70 text-sm max-w-56">
               Connecting young talent with top corporate opportunities
             </p>
@@ -76,24 +78,30 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">Contact</h4>
             <div className="space-y-3">
-              <p className="text-white/70 text-sm">
-                contact@maxwell-govokasi.com
+              <p className="text-white/70 text-sm hover:text-white transition-colors">
+                <Link href={"mailto:"}>contact@maxwell-govokasi.com</Link>
               </p>
               <div className="flex gap-3">
                 <Link
                   href="https://www.linkedin.com/company/govokasi-indonesia/?originalSubdomain=id"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
                 >
                   <Linkedin size={18} />
                 </Link>
                 <Link
                   href="https://www.instagram.com/govokasi/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
                 >
                   <Instagram size={18} />
                 </Link>
                 <Link
                   href="https://www.youtube.com/@govokasiindonesia3214"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
                 >
                   <Youtube size={18} />
