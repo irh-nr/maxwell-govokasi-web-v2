@@ -21,7 +21,7 @@ const coaches = [
   {
     name: "Anjelica Reisa",
     position: "COO x Co-Founder of GOVOKASi",
-    image: "coaches/AR.jpeg",
+    image: "coaches/Coach Anjelica Reisa.jpg",
   },
   {
     name: "Sony Tan",
