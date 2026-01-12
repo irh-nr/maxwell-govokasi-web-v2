@@ -3,7 +3,7 @@
   "version": "2.0",
   "private": true,
   "scripts": {
-    "build": "next build && next export",
+    "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "serve out"
