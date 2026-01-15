@@ -6,7 +6,7 @@ export default function MainSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Background Maxwell x GOVOKASi
+            Maxwell x GOVOKASi Background
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Maxwell x GOVOKASi was established to contribute to the intellectual

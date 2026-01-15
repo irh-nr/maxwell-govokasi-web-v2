@@ -8,25 +8,15 @@ import Link from "next/link";
 
 const heroSlides = [
   {
-    headline: "PROVEN GLOBAL LEADERSHIP LEADERS",
-    highlight: {
-      word: "Leadership",
-      className: "",
-    },
+    headline: "FROM CAMPUS THEORY TO PRACTICAL SKILLS",
     subheadline:
-      "Founded by John C. Maxwell, Maxwell Leadership brings proven global leadership standards to Indonesia.",
-    boldWords: ["John C. Maxwell", "Maxwell Leadership", "leadership"],
-    backgroundClass:
-      "bg-gradient-to-r from-transparent via-primary/70 to-primary",
-    href: "/about-us",
-    cta: "Learn More",
-    photos: "/photos/main-hero-3.png",
-  },
-  {
-    headline: "FROM LOCAL TO GLOBAL LEADERS",
-    subheadline:
-      "Through GOVOKASi, Indonesian talent is developed to meet global leadership standards.",
-    boldWords: ["GOVOKASI", "leadership"],
+      "Through GOVOKASi, undergraduates learn practical knowledge and core skills that are actually used in real workplace environments.",
+    boldWords: [
+      "GOVOKASI",
+      "practical skills",
+      "real workplace",
+      "undergraduates",
+    ],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "/#programs",
@@ -34,15 +24,40 @@ const heroSlides = [
     photos: "/photos/main-hero-2.png",
   },
   {
-    headline: "BUILD THE LEADER YOU’RE MEANT TO BECOME",
+    headline: "GET REAL WORK EXPERIENCE BEFORE YOU GRADUATE",
     subheadline:
-      "Powered by Maxwell Leadership, the Leadership Development Program helps you build clarity, confidence and influence. So you can lead with purpose and create impact beyond your role.",
-    boldWords: ["Maxwell Leadership", "Leadership Development Program"],
+      "Built for undergraduates who want hands-on experience, on-the-job training, and real work habits that make entering the workforce easier.",
+    boldWords: [
+      "real work experience",
+      "on-the-job training",
+      "undergraduates",
+      "workforce",
+    ],
     backgroundClass:
       "bg-gradient-to-br from-primary via-primary/80 to-secondary",
     href: "#cta",
-    cta: "Start Your Leadership Journey",
+    cta: "Start Your Journey",
     photos: "/photos/main-hero-1.png",
+  },
+  {
+    headline: "BACKED BY MAXWELL. BUILT FOR UNDERGRADUATES.",
+    highlight: {
+      word: "MAXWELL",
+      className: "text-brand-accent",
+    },
+    subheadline:
+      "GOVOKASi, acquired by Maxwell, is built to help undergraduates enter the working world with clarity, confidence, and real job readiness — not just academic knowledge.",
+    boldWords: [
+      "GOVOKASi",
+      "acquired by Maxwell",
+      "undergraduates",
+      "job readiness",
+    ],
+    backgroundClass:
+      "bg-gradient-to-r from-transparent via-primary/70 to-primary",
+    href: "/about-us",
+    cta: "Learn More",
+    photos: "/photos/main-hero-3.png",
   },
 ];
 
@@ -97,19 +112,22 @@ export function HeroSection() {
 
     const parts = text.split(new RegExp(`(${highlight.word})`, "gi"));
 
-    return parts.map((part, idx) =>
-      part.toLowerCase() === highlight.word.toLowerCase() ? (
-        <span key={idx} className={highlight.className}>
-          {part}
-        </span>
-      ) : (
-        <span key={idx}>{part}</span>
-      )
-    );
+    return parts.map((part, idx) => (
+      <span
+        key={`${part}-${idx}`}
+        className={
+          part.toLowerCase() === highlight.word.toLowerCase()
+            ? highlight.className
+            : undefined
+        }
+      >
+        {part}
+      </span>
+    ));
   };
 
   return (
-    <section className="relative w-full h-[140dvh] md:h-[95dvh] pt-20 overflow-hidden">
+    <section className="relative w-full h-dvh md:h-[95dvh] pt-20 overflow-hidden">
       {/* Background */}
       <div>
         <div
@@ -128,10 +146,10 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-start justify-center h-full max-w-7xl mx-auto px-4">
         <div className="max-w-2xl animate-fade-in text-start p-8 bg-primary/50 rounded-2xl backdrop-blur-md space-y-4 shadow-2xl">
-          <h1 className="text-5xl font-bold text-white leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
             {renderHeadline(slide.headline, slide.highlight)}
           </h1>
-          <p className="text-2xl text-white/90 mt-6 ">
+          <p className="md:text-2xl text-white/90 mt-6 ">
             {boldWords(slide.subheadline, slide.boldWords ?? [])}
           </p>
 
@@ -197,15 +215,18 @@ function boldWords(text: string, words: string[]) {
 
   let result: React.ReactNode[] = [text];
 
-  words.forEach((word) => {
-    result = result.flatMap((segment) => {
+  words.forEach((word, wordIndex) => {
+    result = result.flatMap((segment, segmentIndex) => {
       if (typeof segment !== "string") return segment;
 
       const parts = segment.split(new RegExp(`(${word})`, "gi"));
 
-      return parts.map((p, i) =>
+      return parts.map((p, partIndex) =>
         p.toLowerCase() === word.toLowerCase() ? (
-          <strong key={i} className="font-semibold text-brand-accent">
+          <strong
+            key={`${wordIndex}-${segmentIndex}-${partIndex}`}
+            className="font-semibold text-brand-accent"
+          >
             {p}
           </strong>
         ) : (

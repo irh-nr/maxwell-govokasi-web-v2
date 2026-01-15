@@ -8,33 +8,37 @@ const PROGRAM_DATA = [
     title: "On-the-Job Training (OJT) Program",
     description: [
       <>
-        The OJT Program is designed to build your professional foundation
-        through real execution and guided development.
+        The OJT Program is designed for undergraduate talents to build
+        professional competence through structured guidance and real workplace
+        execution.
       </>,
       <>
-        Participants will develop <b>leadership soft skills</b>, including
-        communication, accountability, teamwork, and professional work ethics,
-        while actively contributing to <b>real projects</b> within Internal and
-        its partner ecosystem.
+        Participants develop essential{" "}
+        <b>professional and leadership soft skills</b>, including communication,
+        accountability, teamwork, and work ethics, while actively contributing
+        to <b>real projects</b> within Internal and its partner ecosystem.
       </>,
       <>
-        You will receive structured internal hard skills development aligned
-        with your chosen Department (Creative, Business Development, Technology,
-        or Human Resources). Ensuring your learning is directly connected to
-        real role expectations and industry needs.
+        You will receive focused <b>internal hard skills development</b> aligned
+        with your selected Department (Creative, Business Development,
+        Technology, or Human Resources), ensuring your learning directly
+        reflects real role expectations and industry standards.
       </>,
       <>
-        This program prepares you to become a capable, work-ready professional
-        who understands how to contribute, collaborate, and execute from day
-        one.
+        This program prepares you to transition confidently from campus to the
+        workplace as a <b>work-ready professional</b> who understands how to
+        contribute, collaborate, and execute effectively from day one.
       </>,
     ],
     features: [
-      "Leadership soft skills development",
-      "Real project experience in live work environments",
-      "Internal hard skills development",
+      "Leadership and professional soft skills training",
+      "Hands-on experience through real project execution",
+      "Structured internal hard skills development aligned with industry needs",
+      "Work-ready preparation for real workplace environments",
     ],
   },
+
+  /*
   {
     id: "maxwell",
     icon: Briefcase,
@@ -71,7 +75,7 @@ const PROGRAM_DATA = [
       "Internal hard skills development",
       "External hard skills development by Maxwell Leadership Coaches",
     ],
-  },
+  }, */
 ];
 
 export default function Programs() {

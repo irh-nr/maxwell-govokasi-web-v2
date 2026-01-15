@@ -18,7 +18,6 @@ export default function Home() {
       <CompanyMarqueeT />
       <CompanyMarqueeReverse />
       <CompanyMarqueeB />
-      <LDPSection />
       <Programs />
       <CoachesSection />
       <SuccessStories />
