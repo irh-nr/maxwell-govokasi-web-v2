@@ -23,6 +23,7 @@ export function Navigation() {
     //{ name: "Curriculum", href: "/#curriculum" },
     //{ name: "Engage The Coach", href: "/" },
     { name: "About Us", href: "/about-us" },
+    { name: "Events", href: "/events" },
     //{ name: "Contact Us", href: "/contact" },
   ];
 
@@ -33,6 +34,7 @@ export function Navigation() {
     //{ name: "Curriculum", href: "/#curriculum" },
     //{ name: "Engage The Coach", href: "/" },
     { name: "About Us", href: "/about-us" },
+    { name: "Events", href: "/events" },
     //{ name: "Contact Us", href: "/contact" },
   ];
 
