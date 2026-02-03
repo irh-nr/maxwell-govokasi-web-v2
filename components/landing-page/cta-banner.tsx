@@ -14,7 +14,7 @@ export function CtaBanner() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="px-10 py-4 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
-            <Link href={"/form/talent"}>Apply Now</Link>
+            <Link href={"https://form.fillout.com/t/mrMSiA7GuPus"}>Apply Now</Link>
           </button>
           <button className="px-10 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all">
             <Link href={"/form/companies"}>Partner With Us</Link>
